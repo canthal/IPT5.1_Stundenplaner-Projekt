@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stundenplaner-Projekt", "Stundenplaner-Projekt\Stundenplaner-Projekt.csproj", "{B0F3AD11-0415-40B7-864C-7842406900B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0F3AD11-0415-40B7-864C-7842406900B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F3AD11-0415-40B7-864C-7842406900B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F3AD11-0415-40B7-864C-7842406900B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F3AD11-0415-40B7-864C-7842406900B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {626634B7-A183-4E7F-9228-941FD9CE9CE8}
+	EndGlobalSection
+EndGlobal
