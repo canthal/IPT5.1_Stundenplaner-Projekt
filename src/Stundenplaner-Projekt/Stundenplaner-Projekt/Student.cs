@@ -1,6 +1,6 @@
 ﻿namespace Stundenplaner_Projekt
 {
-    internal class Students
+    internal class Student : Person
     {
 
     }

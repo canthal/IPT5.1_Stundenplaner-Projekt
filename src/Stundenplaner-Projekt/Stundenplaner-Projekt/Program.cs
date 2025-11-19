@@ -10,7 +10,7 @@ namespace Stundenplaner_Projekt
         {
             List<Room> rooms = Datenmanager.LoadDataRoom();
             List<SchoolClass> schoolClasses = Datenmanager.LoadDataSchoolClass();
-            List<Students> students = Datenmanager.LoadDataStudent();
+            List<Student> students = Datenmanager.LoadDataStudent();
             List<Subject> subjects = Datenmanager.LoadDataSubject();
             List<Teacher> teachers = Datenmanager.LoadDataTeacher();
 
