@@ -67,127 +67,127 @@ namespace Stundenplaner_Projekt
                 new Teacher("Anna", "Meier", new() { subjects[0], subjects[5] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 0),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 6)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 6)
                     }),
 
                 new Teacher("Lukas", "Keller", new() { subjects[1], subjects[2] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 1),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 7)
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 7)
                     }),
 
                 new Teacher("Mila", "Aydin", new() { subjects[4], subjects[19] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 1),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 7)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
                     }),
 
                 new Teacher("Jonas", "Stein", new() { subjects[10] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 0),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 6)
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 0),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 2),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 6)
                     }),
 
                 new Teacher("Laura", "Brunner", new() { subjects[3], subjects[8] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 0),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 6)
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 6)
                     }),
 
                 new Teacher("Felix", "Schmid", new() { subjects[6], subjects[7] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 6),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 8)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 6),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 8)
                     }),
 
                 new Teacher("Nora", "Graf", new() { subjects[9], subjects[12] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 7),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 8)
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 7),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 8)
                     }),
 
                 new Teacher("Daniel", "Ziegler", new() { subjects[0], subjects[13] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 7),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 8),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 2)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 7),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 2)
                     }),
 
                 new Teacher("Sophie", "Lehmann", new() { subjects[14], subjects[15] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 1),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 7)
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 1),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
                     }),
 
                 new Teacher("Timo", "Bauer", new() { subjects[16], subjects[4] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 1),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 6)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 6)
                     }),
 
                 new Teacher("Clara", "Huber", new() { subjects[18], subjects[2] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 0),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 8)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 8)
                     }),
 
                 new Teacher("Simon", "Fischer", new() { subjects[5], subjects[6] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 1),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 6),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 8)
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 6),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8)
                     }),
 
                 new Teacher("Eva", "Arnold", new() { subjects[7], subjects[8] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 3),
-                        new TimeBlock(TimeBlock.Weekday.Tuesday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 7),
-                        new TimeBlock(TimeBlock.Weekday.Thursday, 8)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 7),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8)
                     }),
 
                 new Teacher("David", "Kunz", new() { subjects[9], subjects[10] },
                     new()
                     {
-                        new TimeBlock(TimeBlock.Weekday.Monday, 2),
-                        new TimeBlock(TimeBlock.Weekday.Monday, 4),
-                        new TimeBlock(TimeBlock.Weekday.Wednesday, 5),
-                        new TimeBlock(TimeBlock.Weekday.Friday, 7)
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
                     })
             };
 
@@ -373,6 +373,7 @@ namespace Stundenplaner_Projekt
                             Console.Clear();
                             foreach (var item in schoolClasses)
                             {
+                                if (item.Timetable == null) continue;
                                 foreach (var t in item.Timetable)
                                 {
                                     Console.WriteLine($"{t.Value.Time.Day} {t.Value.Time.GetHours} {t.Value.Subject.Name} - {t.Value.Teacher.FirstName} {t.Value.Teacher.LastName} - {t.Value.Room.RoomId}");

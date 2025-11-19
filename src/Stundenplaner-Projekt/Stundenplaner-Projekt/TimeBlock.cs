@@ -4,7 +4,7 @@ namespace Stundenplaner_Projekt
 {
     public class TimeBlock
     {
-        public enum Weekday { Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5 }
+        public enum Weekday { Montag = 1, Dienstag = 2, Mittwoch = 3, Donnerstag = 4, Freitag = 5 }
 
         private readonly static string[] Hours =
         {

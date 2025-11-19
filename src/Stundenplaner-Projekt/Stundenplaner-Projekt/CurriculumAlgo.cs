@@ -154,10 +154,12 @@ namespace Stundenplaner_Projekt
             List<Dictionary<TimeBlock, Combination>> tempDic = new();
             for (int i = 0; i < curriculums.Count - 1; i++)
             {
+                if (SchoolClasses[i].Timetable == null) SchoolClasses[i].Timetable = new Dictionary<TimeBlock, Combination>();
+
                 Dictionary<TimeBlock, Combination> sortedDic = new();
                 foreach (var t in curriculums[i].OrderBy(k => k.Key.Day).ThenBy(k => k.Key.BlockIndex))
                     sortedDic.Add(t.Key, new Combination(t.Value.Subject, t.Value.Teacher, t.Value.Room, t.Key));
-                SchoolClasses[i].Timetable.Clear();
+                    SchoolClasses[i].Timetable.Clear();
                 foreach (var s in sortedDic)
                     SchoolClasses[i].Timetable.Add(s.Key, s.Value);
                 tempDic.Add(sortedDic);
