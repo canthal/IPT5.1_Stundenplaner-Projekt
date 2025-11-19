@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using static Stundenplaner_Projekt.TimeBlock;
 
 namespace Stundenplaner_Projekt
@@ -62,54 +64,6 @@ namespace Stundenplaner_Projekt
                 select new Combination(subject, teacher, room, time);
             return allComb.ToList();
         }
-
-        //private List<Combination> GetSortedList(List<Combination> unsortedCombinations)
-        //{
-        //    int temp;
-        //    Combination tempComb;
-        //    bool swapped;
-
-        //    List<List<Combination>> allDaysCombinationList = new();
-        //    allDaysCombinationList.Add(SplitList(unsortedCombinations, Weekday.Monday));
-        //    allDaysCombinationList.Add(SplitList(unsortedCombinations, Weekday.Tuesday));
-        //    allDaysCombinationList.Add(SplitList(unsortedCombinations, Weekday.Wednesday));
-        //    allDaysCombinationList.Add(SplitList(unsortedCombinations, Weekday.Thursday));
-        //    allDaysCombinationList.Add(SplitList(unsortedCombinations, Weekday.Friday));
-
-        //    foreach (var dayCombination in allDaysCombinationList)
-        //    {
-        //        for (int i = 0; i < dayCombination.Count - 1; i++)
-        //        {
-        //            swapped = false;
-        //            for (int j = 0; j < dayCombination.Count - 1; j++)
-        //            {
-        //                if (dayCombination[i].time.BlockIndex > dayCombination[j + 1].time.BlockIndex)
-        //                {
-        //                    temp = dayCombination[j].time.BlockIndex;
-        //                    tempComb = dayCombination[j];
-        //                    dayCombination[j] = dayCombination[j + 1];
-        //                    dayCombination[j + 1] = tempComb;
-        //                    swapped = true;
-        //                }
-        //            }
-
-        //            if (!swapped)
-        //                break;
-        //        }
-        //    }
-
-        //    List<Combination> sortedList = new();
-        //    allDaysCombinationList.ForEach(combination => sortedList.AddRange(combination));
-        //    return sortedList;
-        //}
-
-        //private List<Combination> SplitList(List<Combination> combinations, Weekday weekday)
-        //{
-        //    List<Combination> dayCombinationList = new();
-        //    dayCombinationList.AddRange(combinations.Where(combination => combination.time.Day == weekday));
-
-        //    return dayCombinationList;
-        //}
 
         private int GetValuation(List<Combination> timetable)
         {

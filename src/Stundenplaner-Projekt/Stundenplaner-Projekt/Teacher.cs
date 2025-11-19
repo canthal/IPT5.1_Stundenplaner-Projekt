@@ -33,11 +33,4 @@ namespace Stundenplaner_Projekt
             _teachingSubjects.Remove(subject);
         }
     }
-
-    
-   
-
-    // Placeholder-Klassen
-    public class TimeBlock { }
-    public class Room { }
 }

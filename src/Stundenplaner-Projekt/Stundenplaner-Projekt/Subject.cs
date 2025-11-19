@@ -25,9 +25,5 @@ namespace Stundenplaner_Projekt
             _room = room;
         }
     }
-
-    // Placeholder-Klassen
-    public class TimeBlock { }
-    public class Room { }
 }
 
