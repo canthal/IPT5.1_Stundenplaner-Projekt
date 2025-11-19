@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Stundenplaner_Projekt
 {
-    public class Teacher
+    internal class Teacher
     {
         private string _firstName;
         private string _lastName;

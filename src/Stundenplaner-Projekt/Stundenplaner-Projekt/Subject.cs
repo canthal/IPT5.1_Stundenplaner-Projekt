@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stundenplaner_Projekt 
 {
-    public class Subject
+    internal class Subject
     {
         private string _name;
         private Room _room;

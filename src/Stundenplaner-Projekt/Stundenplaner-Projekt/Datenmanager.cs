@@ -24,7 +24,7 @@ namespace Stundenplaner_Projekt
             File.WriteAllText(pathSchoolClass, json);
         }
 
-        internal static void SaveData(List<Student> students)
+        internal static void SaveData(List<Students> students)
         {
             string json = JsonSerializer.Serialize(students);
             File.WriteAllText(pathStudent, json);
@@ -58,12 +58,12 @@ namespace Stundenplaner_Projekt
             return JsonSerializer.Deserialize<List<SchoolClass>>(json);
         }
 
-        internal static List<Student> LoadDataStudent()
+        internal static List<Students> LoadDataStudent()
         {
-            if (!File.Exists(pathStudent)) return new List<Student>();
+            if (!File.Exists(pathStudent)) return new List<Students>();
 
             string json = File.ReadAllText(pathStudent);
-            return JsonSerializer.Deserialize<List<Student>>(json);
+            return JsonSerializer.Deserialize<List<Students>>(json);
         }
 
         internal static List<Subject> LoadDataSubject()

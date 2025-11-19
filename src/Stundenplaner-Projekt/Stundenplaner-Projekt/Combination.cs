@@ -2,12 +2,12 @@
 
 namespace Stundenplaner_Projekt
 {
-    public class Combination
+    internal class Combination
     {
-        public Subject Subject { get; init; }
-        public Teacher Teacher { get; init; }
-        public Room Room { get; init; }
-        public TimeBlock Time { get; init; }
+        public Subject Subject { get; }
+        public Teacher Teacher { get; }
+        public Room Room { get; }
+        public TimeBlock Time { get; }
         public Combination(Subject subject, Teacher teacher, Room room, TimeBlock time)
         {
             this.Subject = subject;

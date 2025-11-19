@@ -10,7 +10,7 @@ namespace Stundenplaner_Projekt
         {
             List<Room> rooms = Datenmanager.LoadDataRoom();
             List<SchoolClass> schoolClasses = Datenmanager.LoadDataSchoolClass();
-            List<Student> students = Datenmanager.LoadDataStudent();
+            List<Students> students = Datenmanager.LoadDataStudent();
             List<Subject> subjects = Datenmanager.LoadDataSubject();
             List<Teacher> teachers = Datenmanager.LoadDataTeacher();
 
@@ -40,26 +40,26 @@ namespace Stundenplaner_Projekt
 
             rooms = new()
             {
-                new Room("R101", subjects[0], 24),
-                new Room("R102", subjects[1], 22),
-                new Room("R103", subjects[2], 20),
-                new Room("R104", subjects[3], 18),
-                new Room("R105", subjects[4], 20),
-                new Room("R106", subjects[5], 22),
-                new Room("R107", subjects[6], 24),
-                new Room("R108", subjects[7], 26),
-                new Room("R109", subjects[8], 20),
-                new Room("R110", subjects[9], 18),
-                new Room("LAB1", subjects[4], 18),
-                new Room("LAB2", subjects[19], 20),
-                new Room("GYM",  subjects[10], 30),
-                new Room("MUS1", subjects[11], 15),
-                new Room("ART1", subjects[12], 16),
-                new Room("WIR1", subjects[13], 22),
-                new Room("LAW1", subjects[14], 20),
-                new Room("PHIL1", subjects[15], 18),
-                new Room("TEC1", subjects[16], 20),
-                new Room("LAN1", subjects[17], 18)
+                new Room("R101", 24),
+                new Room("R102", 22),
+                new Room("R103", 20),
+                new Room("R104", 18),
+                new Room("R105", 20),
+                new Room("R106", 22),
+                new Room("R107", 24),
+                new Room("R108", 26),
+                new Room("R109", 20),
+                new Room("R110", 18),
+                new Room("LAB1", 18),
+                new Room("LAB2", 20),
+                new Room("GYM", 30),
+                new Room("MUS1", 15),
+                new Room("ART1", 16),
+                new Room("WIR1", 22),
+                new Room("LAW1", 20),
+                new Room("PHIL1", 18),
+                new Room("TEC1", 20),
+                new Room("LAN1", 18)
             };
 
             teachers = new()
@@ -277,7 +277,7 @@ namespace Stundenplaner_Projekt
                             do
                             {
                                 Console.Clear();
-                                Console.Write("Wähle die Fächer aus: ");
+                                Console.WriteLine("Wähle die Fächer aus: ");
                                 subjects.ForEach(s => Console.WriteLine($"{s.Name}"));
                                 string subject = Console.ReadLine();
                                 Subject firstSatisfySubject = subjects.First(s => s.Name == subject);

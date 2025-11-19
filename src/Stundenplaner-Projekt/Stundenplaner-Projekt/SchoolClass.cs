@@ -5,7 +5,7 @@ namespace Stundenplaner_Projekt
     internal class SchoolClass
     {
         private string _name;
-        private List<Student> _students;
+        private List<Students> _students;
         private Dictionary<TimeBlock, Combination> _timetable;
         public string Name
         {
@@ -18,7 +18,7 @@ namespace Stundenplaner_Projekt
                 _name = value;
             }
         }
-        public List<Student> Students
+        public List<Students> Students
         {
             get
             {
@@ -49,7 +49,7 @@ namespace Stundenplaner_Projekt
             _name = name;
             _students = students;
         }
-        public void AddStudent(Student student) => Students.Add(student);
-        public void RemoveSTudent(Student student) => Students.Remove(student);
+        public void AddStudent(Students student) => Students.Add(student);
+        public void RemoveSTudent(Students student) => Students.Remove(student);
     }
 }
