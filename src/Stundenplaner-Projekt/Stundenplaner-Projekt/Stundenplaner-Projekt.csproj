@@ -79,6 +79,8 @@
     <Compile Include="Datenmanager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="SchoolClass.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="TimeBlock.cs" />
