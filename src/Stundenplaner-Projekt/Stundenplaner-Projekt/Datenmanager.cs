@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Stundenplaner_Projekt
 {
-    internal class Datenmanager
+    internal static class Datenmanager
     {
         private const string pathRoom = "room.json";
         private const string pathSchoolClass = "schoolClass.json";
