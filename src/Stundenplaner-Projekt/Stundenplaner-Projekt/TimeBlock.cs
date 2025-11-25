@@ -6,7 +6,7 @@ namespace Stundenplaner_Projekt
     {
         public enum Weekday { Montag = 1, Dienstag = 2, Mittwoch = 3, Donnerstag = 4, Freitag = 5 }
 
-        private readonly static string[] Hours =
+        public readonly static string[] Hours =
         {
             "8:00 - 9:00",
             "9:00 - 10:00",
@@ -23,9 +23,7 @@ namespace Stundenplaner_Projekt
         public Weekday Day { get; }
         public int BlockIndex { get; }
         public string GetHours => Hours[BlockIndex];
-
-        //public int GetBlockIndex(string hour) => Array.IndexOf(Hours, hour);
-
+        
         public TimeBlock(Weekday weekday)
         {
             Day = weekday;

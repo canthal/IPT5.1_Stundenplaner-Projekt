@@ -9,20 +9,20 @@ namespace Stundenplaner_Projekt
     internal class Subject
     {
         private string _name;
-        private Room _room;
 
-        public string Name { get => _name; set => _name = value; }
-        public Room Room { get => _room; set => _room = value; }
+        public string Name 
+        { 
+            get => _name;
+            set 
+            {
+                if (value.Length == 0) throw new FormatException("Name darf nicht die Länge 0 haben!");
+                _name = value;
+            }
+        }
 
         public Subject(string name)
         {
-            _name = name;
-        }
-
-        public Subject(string name, Room room)
-        {
-            _name = name;
-            _room = room;
+            Name = name;
         }
     }
 }

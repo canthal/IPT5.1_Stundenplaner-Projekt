@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Stundenplaner_Projekt
             }
             set
             {
+                if (value.Length == 0) throw new FormatException("Der Raum muss einen Namen länger als 0 Zeichen haben");
                 _roomId = value;
             }
         }
@@ -29,17 +31,18 @@ namespace Stundenplaner_Projekt
             }
             set
             {
+                if (value < 0) throw new FormatException("Ein Raum darf keine negativen maxStudent haben!");
                 _maxStudent = value;
             }
         }
         public Room(string roomId)
         {
-            _roomId = roomId;
+            RoomId = roomId;
         }
         public Room(string roomId, int maxStudent)
         {
-            _roomId = roomId;
-            _maxStudent = maxStudent;
+            RoomId = roomId;
+            MaxStudent = maxStudent;
         }
     }
 }
