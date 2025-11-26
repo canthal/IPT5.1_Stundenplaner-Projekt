@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Stundenplaner_Projekt
 {
@@ -66,6 +67,7 @@ namespace Stundenplaner_Projekt
         /// Setzt Schulklasse, nimmt ein Argument an Name
         /// </summary>
         /// <param name="name">Name der Klasse</param>
+        [JsonConstructor]
         public SchoolClass(string name)
         {
             _name = name;

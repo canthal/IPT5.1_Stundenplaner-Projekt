@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Stundenplaner_Projekt
 {
@@ -24,6 +25,7 @@ namespace Stundenplaner_Projekt
         /// <param name="firstName">Vorname des Schülers</param>
         /// <param name="lastName">Nachname des Schülers</param>
         /// <param name="email">Email Adresse des Schülers</param>
+        [JsonConstructor]
         public Student(string firstName, string lastName, string email) : this(firstName,  lastName)
         {
             Email = email;

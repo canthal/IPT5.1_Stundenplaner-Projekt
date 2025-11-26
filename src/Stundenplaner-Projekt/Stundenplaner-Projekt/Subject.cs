@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Stundenplaner_Projekt 
@@ -33,6 +34,7 @@ namespace Stundenplaner_Projekt
         /// Setzt Fach mit einem Attribut namens Name
         /// </summary>
         /// <param name="name">Name des Faches</param>
+        [JsonConstructor]
         public Subject(string name)
         {
             Name = name;

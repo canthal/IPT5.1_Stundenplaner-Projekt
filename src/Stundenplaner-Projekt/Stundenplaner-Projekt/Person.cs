@@ -54,7 +54,7 @@ namespace Stundenplaner_Projekt
             get => _email;
             set
             {
-                if (value.Length == 0 && value.Contains("@")) throw new FormatException("Die Länge der E-Mail darf nicht 0 sein und muss ein @ beinhalten!");
+                // if (value.Length == 0 && value.Contains("@")) throw new FormatException("Die Länge der E-Mail darf nicht 0 sein und muss ein @ beinhalten!");
                 _email = value;
             }
         }

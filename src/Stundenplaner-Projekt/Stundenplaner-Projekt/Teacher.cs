@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Stundenplaner_Projekt
 {
@@ -29,6 +30,7 @@ namespace Stundenplaner_Projekt
         /// </summary>
         public List<TimeBlock> AvailableBlocks { get => _availableBlocks; set => _availableBlocks = value; }
 
+ 
         /// <summary>
         /// Setzt Lehrer, nimmt vier Parameter an.
         /// </summary>
@@ -36,6 +38,7 @@ namespace Stundenplaner_Projekt
         /// <param name="lastName">Nachname des Lehrers</param>
         /// <param name="teachingSubjects">Unterrichtende Fächer</param>
         /// <param name="availableBlocks">Verfügbare Zeiten</param>
+        [JsonConstructor]
         public Teacher(string firstName, string lastName, List<Subject> teachingSubjects, List<TimeBlock> availableBlocks)
         {
             FirstName = firstName;

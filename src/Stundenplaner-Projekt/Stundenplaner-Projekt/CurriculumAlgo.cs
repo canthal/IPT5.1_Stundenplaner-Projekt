@@ -27,6 +27,13 @@ namespace Stundenplaner_Projekt
         /// </summary>
         private List<Room> _rooms;
 
+        private int _countPeakOffTime = 0;
+        private int _countBetweenTime = 0;
+        private int _countEfficiency = 0;
+        public int CountPeakOffTime { get => _countPeakOffTime; private set { _countPeakOffTime = value; } }
+        public int CountBetweenTime { get => _countBetweenTime; private set { _countBetweenTime = value; } }
+        public int CountEfficiency { get => _countEfficiency; private set { _countEfficiency = value; } }
+
         /// <summary>
         /// Liste von Fächern wird verwendet, um für interne Methoden wie Matrix erstellung die einzelnen Fächer zur verfügung zu stellen
         /// </summary>
@@ -121,11 +128,15 @@ namespace Stundenplaner_Projekt
                 if ((t.Time.BlockIndex == 0) || (t.Time.BlockIndex == WorkHours - 1))
                 {
                     value -= offPeakTime;
+                    CountPeakOffTime++;
                 }
-                if (!memorizeRooms.Contains(t.Room.RoomId))
+                if (!memorizeRooms.Any(m => m == t.Room.RoomId))
                     memorizeRooms.Add(t.Room.RoomId);
                 else
-                    value -= betweenHours;
+                {
+                    value -= efficientRoomUsing;
+                    CountEfficiency++;
+                }
             }
 
             int firstHour = int.MaxValue;
@@ -143,7 +154,11 @@ namespace Stundenplaner_Projekt
                         break;
                     }
                 }
-                if (!isValue) value -= efficientRoomUsing;
+                if (!isValue)
+                {
+                    value -= betweenHours;
+                    CountBetweenTime++;
+                }
             }
             return value;
         }
@@ -162,7 +177,8 @@ namespace Stundenplaner_Projekt
                 Dictionary<TimeBlock, Combination> tempComb = new();
                 for (int i = 1; i <= 5; i++)
                 {
-                    for (int j = 0; j <= 4; j++)
+                    
+                    for (int j = 0; j <= rnd.Next(3, 8); j++)
                     {
                         TimeBlock timeBlock;
                         Combination combination;
@@ -208,9 +224,9 @@ namespace Stundenplaner_Projekt
             }
 
             List<Dictionary<TimeBlock, Combination>> tempDic = new();
-            for (int i = 0; i < curriculums.Count - 1; i++)
+            for (int i = 0; i < curriculums.Count; i++)
             {
-                if (SchoolClasses[i].Timetable == null) SchoolClasses[i].Timetable = new Dictionary<TimeBlock, Combination>();
+                SchoolClasses[i].Timetable = new Dictionary<TimeBlock, Combination>();
 
                 Dictionary<TimeBlock, Combination> sortedDic = new();
                 foreach (var t in curriculums[i].OrderBy(k => k.Key.Day).ThenBy(k => k.Key.BlockIndex))

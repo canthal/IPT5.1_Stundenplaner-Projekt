@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Stundenplaner_Projekt
 {
@@ -44,14 +45,15 @@ namespace Stundenplaner_Projekt
         /// Gibt den die Stunde zurück als Textform
         /// </summary>
         public string GetHours => Hours[BlockIndex];
-        
+
         /// <summary>
         /// Setzt TimeBlock mit einem Parameter
         /// </summary>
         /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
-        public TimeBlock(Weekday weekday)
+        [JsonConstructor]
+        public TimeBlock(Weekday day)
         {
-            Day = weekday;
+            Day = day;
         }
 
         /// <summary>
@@ -59,6 +61,7 @@ namespace Stundenplaner_Projekt
         /// </summary>
         /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
         /// <param name="blockIndex">Welche Stunde betroffen ist</param>
+ 
         public TimeBlock(Weekday weekday, int blockIndex) : this(weekday)
         {
             BlockIndex = blockIndex;
