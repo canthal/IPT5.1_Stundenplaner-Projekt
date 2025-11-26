@@ -5,6 +5,9 @@ using static Stundenplaner_Projekt.TimeBlock;
 
 namespace Stundenplaner_Projekt
 {
+    /// <summary>
+    /// Berechnet den Stundenplan welcher dann entgegen genommen werden kann von anderen Klassen
+    /// </summary>
     internal class CurriculumAlgo
     {
         /// <summary>
@@ -157,7 +160,6 @@ namespace Stundenplaner_Projekt
             foreach (var schoolClass in SchoolClasses)
             {
                 Dictionary<TimeBlock, Combination> tempComb = new();
-                //schoolClass.Timetable.Clear();
                 for (int i = 1; i <= 5; i++)
                 {
                     for (int j = 0; j <= 4; j++)
@@ -171,7 +173,6 @@ namespace Stundenplaner_Projekt
                         } while (tempComb.Keys.Any(time => ((time.BlockIndex == timeBlock.BlockIndex) && (time.Day == timeBlock.Day))));
                         tempComb.Add(timeBlock, combination);
                         allCombinations.Remove(combination);
-                        //Console.WriteLine($"{schoolClass.Name} {timeBlock.Day} {combination.time.GetHours} {combination.room.RoomId} {combination.teacher.FirstName} {combination.teacher.LastName}");
                     }
                 }
                 allCurr.Add(tempComb);

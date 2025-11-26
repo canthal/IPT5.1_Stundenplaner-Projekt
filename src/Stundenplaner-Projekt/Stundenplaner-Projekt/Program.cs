@@ -10,6 +10,7 @@ namespace Stundenplaner_Projekt
     {
         static void Main(string[] args)
         {
+            // Listen von Klassen die für die Laufzeit gebraucht werden, von Dateimanager aus.
             List<Room> rooms = Datenmanager.LoadDataRoom();
             List<SchoolClass> schoolClasses = Datenmanager.LoadDataSchoolClass();
             List<Student> students = Datenmanager.LoadDataStudent();
@@ -218,9 +219,10 @@ namespace Stundenplaner_Projekt
                 new Student("Selina", "Ammann", "selina.ammann@example.com"),
             };
 
-
+            // Benutzerinterface welches so lange läuft bis Program geschlossen wird
             while (true)
             {
+                // input der Aktivität
                 byte mainInput;
                 do
                 {
@@ -234,8 +236,10 @@ namespace Stundenplaner_Projekt
                     Console.WriteLine("-----------------------------");
                 } while (!byte.TryParse(Console.ReadLine(), out mainInput));
 
+                // Bestimmung welche Aktivität, aufgrund des Inputs
                 switch (mainInput)
                 {
+                    // Verwaltung Räume
                     case 0:
                         Console.Clear();
                         Console.WriteLine("0: Räume anzeigen");
@@ -243,17 +247,23 @@ namespace Stundenplaner_Projekt
                         Console.WriteLine("2: Raum entfernen");
                         byte roomInput = Convert.ToByte(Console.ReadLine());
 
+                        // Räume anzeigen
                         if (roomInput == 0) {
                             Console.Clear();
                             rooms.ForEach(r => Console.WriteLine($"RaumID: {r.RoomId}, Max. Schüler: {r.MaxStudent}"));
                             Console.ReadLine();
                         }
+                        // Räume hinzufügen
                         if (roomInput == 1)
                         {
                             Console.Clear();
-
-                            Console.Write("RaumId: ");
-                            string roomId = Console.ReadLine();
+                            string roomId;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("RaumId: ");
+                                roomId = Console.ReadLine();
+                            } while (roomId.Length == 0);
                             byte maxStudent;
                             do
                             {
@@ -264,6 +274,7 @@ namespace Stundenplaner_Projekt
                             Console.WriteLine("Raum hinzugefügt!");
                             Console.ReadKey();
                         }
+                        // Räume entfernen
                         if (roomInput == 2)
                         {
                             Console.Clear();
@@ -290,27 +301,44 @@ namespace Stundenplaner_Projekt
                         }
                         break;
 
+                    // Lehrer Verwaltung
                     case 1:
                         Console.Clear();
                         Console.WriteLine("0: Lehrer anzeigen");
                         Console.WriteLine("1: Lehrer hinzufügen");
                         Console.WriteLine("2: Lehrer entfernen");
+                        Console.WriteLine("3: Fach zu Lehrer hinzufügen");
+                        Console.WriteLine("4: Fach zu Lehrer entfernen");
                         byte teacherInput = Convert.ToByte(Console.ReadLine());
 
+                        // Lehrer anzeigen
                         if(teacherInput == 0) 
                         {
                             Console.Clear();
+                            Console.WriteLine("Alle Lehrer: ");
                             foreach (var t in teachers)
-                                Console.WriteLine($" {t.FirstName} {t.LastName}, Unterrichtende Fächer: {string.Join( ", ", t.TeachingSubjects.Select(t => t.Name))}");
+                                Console.WriteLine($" {t.FirstName, -10} {t.LastName, -15} Unterrichtende Fächer: {string.Join( ", ", t.TeachingSubjects.Select(t => t.Name))}");
                             Console.ReadLine();
                         }
+                        // Lehrer hinzufügen
                         if (teacherInput == 1) {
                             Console.Clear();
-                            Console.Write("Vorname: ");
-                            string firstName = Console.ReadLine();
-                            Console.Clear();
-                            Console.Write("Nachname: ");
-                            string lastName = Console.ReadLine();
+                            string firstName;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Vorname: ");
+                                firstName = Console.ReadLine();
+                            } while (firstName.Length == 0);
+
+                            string lastName;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Nachname: ");
+                                lastName = Console.ReadLine();
+                            } while (lastName.Length == 0);
+
                             HashSet<Subject> chosenSubjects = new();
                             string choice;
                             do
@@ -338,7 +366,7 @@ namespace Stundenplaner_Projekt
                                 Console.WriteLine($"Fach {firstSatisfySubject.Name} wurde hinzugefügt!");
                                 do
                                 {
-                                    Console.Write("Willst du weitere Fächer hinzufügen? (j/n)");
+                                    Console.Write("Willst du weitere Fächer hinzufügen? (j/n): ");
                                     choice = Console.ReadKey().KeyChar.ToString().ToLower();
                                 } while (choice != "j" && choice != "n");
                             } while (choice == "j");
@@ -369,15 +397,17 @@ namespace Stundenplaner_Projekt
                                 } while (continueAdding == "j");
                             }
                             teachers.Add(new Teacher(firstName, lastName, chosenSubjects.ToList(), workHours.ToList()));
-                            Console.WriteLine("Lehrer wurde hinzugefügt!");
+                            Console.WriteLine($"{firstName} {lastName} wurde hinzugefügt!");
                             Console.ReadKey();
                         }
+                        // Lehrer entfernen
                         if(teacherInput == 2)
                         {
                             Console.Clear();
                             int teacherIndex;
                             do
                             {
+                                Console.WriteLine("Gebe den Index an der links steht zur passenden Lehrperson: ");
                                 for (int i = 0; i < teachers.Count; i++)
                                 {
                                     Console.WriteLine($"{i}: {teachers[i].FirstName} {teachers[i].LastName} {teachers[i].Email}");
@@ -387,7 +417,55 @@ namespace Stundenplaner_Projekt
                             teachers.Remove(teachers[teacherIndex]);
                             Console.ReadKey();
                         }
+
+                        if (teacherInput == 3)
+                        {
+                            int teacherIndex, chooseSubject;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Gebe den Index vom Lehrer an: ");
+                                for (int i = 0; i < teachers.Count; i++)
+                                    Console.WriteLine($"{i} {teachers[i].FirstName, -10} {teachers[i].LastName, -10} {teachers[i].Email, -30}");
+                                Console.WriteLine("-------------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out teacherIndex));
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"{teachers[teacherIndex].FirstName} {teachers[teacherIndex].LastName} - Wähle das entsprechnde Fach aus: ");
+                                for (int i = 0; i < subjects.Count; i++)
+                                    Console.WriteLine($"{i}: {subjects[i].Name}");
+                                Console.WriteLine("-------------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out chooseSubject) && chooseSubject <= subjects.Count);
+                            teachers[teacherIndex].AddSubject(subjects[chooseSubject]);
+                            Console.WriteLine($"Das Fach {subjects[chooseSubject].Name} wurde bei {teachers[teacherIndex].FirstName} {teachers[teacherIndex].LastName} hinzugefügt");
+                            Console.ReadLine();
+                        }
+                        if (teacherInput == 4)
+                        {
+                            int teacherIndex, chooseSubject;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Gebe den Index vom Lehrer an: ");
+                                for (int i = 0; i < teachers.Count; i++)
+                                    Console.WriteLine($"{i} {teachers[i].FirstName,-10} {teachers[i].LastName,-10} {teachers[i].Email,-30}");
+                                Console.WriteLine("-------------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out teacherIndex));
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"{teachers[teacherIndex].FirstName} {teachers[teacherIndex].LastName} - Wähle das entsprechnde Fach aus: ");
+                                for (int i = 0; i < teachers[teacherIndex].TeachingSubjects.Count; i++)
+                                    Console.WriteLine($"{i}: {teachers[teacherIndex].TeachingSubjects[i].Name}");
+                                Console.WriteLine("-------------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out chooseSubject) && chooseSubject <= subjects.Count);
+                            Console.WriteLine($"Das Fach {teachers[teacherIndex].TeachingSubjects[chooseSubject].Name} wurde bei {teachers[teacherIndex].FirstName} {teachers[teacherIndex].LastName} entfernt");
+                            teachers[teacherIndex].RemoveSubjects(teachers[teacherIndex].TeachingSubjects[chooseSubject].Name);
+                            Console.ReadLine();
+                        }
                         break;
+                    // Verwaltung Fächer
                     case 2:
                         Console.Clear();
                         Console.WriteLine("0: Fächer anzeigen");
@@ -395,20 +473,27 @@ namespace Stundenplaner_Projekt
                         Console.WriteLine("2: Fächer entfernen");
                         byte subjectInput = Convert.ToByte(Console.ReadLine());
 
+                        // Fächer anzeigen
                         if (subjectInput == 0) {
                             Console.Clear();
                             subjects.ForEach(s => Console.WriteLine($"{s.Name}"));
                             Console.ReadLine();
                         }
+                        // Fächer hinzufügen
                         if (subjectInput == 1)
                         {
-                            Console.Clear();
-                            Console.Write("Fachname: ");
-                            string subjectName = Console.ReadLine();
+                            string subjectName;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Fachname: ");
+                                subjectName = Console.ReadLine();
+                            } while (subjectName.Length == 0);
                             subjects.Add(new Subject(subjectName));
                             Console.WriteLine("Fach hinzugefügt!");
                             Console.ReadLine();
                         }
+                        // Fächer entfernen
                         if (subjectInput == 2)
                         {
                             if (subjects.Count == 0)
@@ -430,28 +515,39 @@ namespace Stundenplaner_Projekt
                             Console.ReadLine();
                         }
                         break;
+                    // Verwaltung Schulklassen
                     case 3:
                         Console.Clear();
                         Console.WriteLine("0: Schulklassen anzeigen");
                         Console.WriteLine("1: Schulklasse hinzufügen");
                         Console.WriteLine("2: Schulklasse entfernen");
+                        Console.WriteLine("3: Schüler in Schulklasse einfügen");
+                        Console.WriteLine("4: Schüler in Schulklasse entfernen");
+
                         byte schoolClassInput = Convert.ToByte(Console.ReadLine());
 
+                        // Schulklassen anzeigen
                         if (schoolClassInput == 0) {
                             Console.Clear();
+                            Console.WriteLine("Alle Schulklassen: ");
                             schoolClasses.ForEach(s => Console.WriteLine($"{s.Name}"));
                             Console.ReadLine();
                         }
+                        // Schulklassen hinzufügen
                         if (schoolClassInput == 1)
                         {
-                            Console.Clear();
-
-                            Console.Write("Name von der Schulklasse: ");
-                            string schoolClassName = Console.ReadLine();
+                            string schoolClassName;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Name von der Schulklasse: ");
+                                schoolClassName = Console.ReadLine();
+                            } while (schoolClassName.Length == 0);
                             schoolClasses.Add(new SchoolClass(schoolClassName));
                             Console.WriteLine("Schulklasse hinzugefügt!");
                             Console.ReadLine();
                         }
+                        // Schulklassen entfernen
                         if (schoolClassInput == 2)
                         {
                             if (schoolClasses.Count == 0)
@@ -472,7 +568,62 @@ namespace Stundenplaner_Projekt
                             schoolClasses.Remove(schoolClasses[schoolClassIndex]);
                             Console.ReadLine();
                         }
+                        if (schoolClassInput == 3)
+                        {
+                            int schoolClassIndex;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Wähle den Index aus von der Klasse die ausgewählt werden soll: ");
+                                for (int i = 0; i < schoolClasses.Count; i++)
+                                    Console.WriteLine($"{i}: {schoolClasses[i].Name}");
+                                Console.WriteLine("-----------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out schoolClassIndex));
+
+                            int chooseStudent;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"{schoolClasses[schoolClassIndex].Name} - Wähle den Index vom Schüler: ");
+                                Console.WriteLine("-----------------------------------");
+                                for (int i = 0; i < students.Count; i++)
+                                    Console.WriteLine($"{i} {students[i].FirstName} {students[i].LastName}");
+                                Console.WriteLine("-----------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out chooseStudent));
+
+                            schoolClasses[schoolClassIndex].AddStudent(students[chooseStudent]);
+                            Console.WriteLine($"Schüler {students[chooseStudent].FirstName} {students[chooseStudent].LastName} wurde hinzugefügt");
+                            Console.ReadLine();
+                        }
+                        if (schoolClassInput == 4)
+                        {
+                            int schoolClassIndex;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Wähle den Index aus von der Klasse die ausgewählt werden soll: ");
+                                for (int i = 0; i < schoolClasses.Count; i++)
+                                    Console.WriteLine($"{i}: {schoolClasses[i].Name}");
+                                Console.WriteLine("-----------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out schoolClassIndex));
+
+                            int chooseStudent;
+                            do
+                            {
+                                Console.Clear();
+                                Console.WriteLine($"{schoolClasses[schoolClassIndex].Name} - Wähle den Index vom Schüler: ");
+                                Console.WriteLine("-----------------------------------");
+                                for (int i = 0; i < students.Count; i++)
+                                    Console.WriteLine($"{i} {students[i].FirstName} {students[i].LastName}");
+                                Console.WriteLine("-----------------------------------");
+                            } while (!int.TryParse(Console.ReadLine(), out chooseStudent));
+
+                            schoolClasses[schoolClassIndex].RemoveStudent(students[chooseStudent]);
+                            Console.WriteLine($"Schüler {students[chooseStudent].FirstName} {students[chooseStudent].LastName} wurde entfernt");
+                            Console.ReadLine();
+                        }
                         break;
+                    // Verwaltung Studenten
                     case 4:
                         int studentInput;
                         do
@@ -483,23 +634,41 @@ namespace Stundenplaner_Projekt
                             Console.WriteLine("2: Schüler entfernen");
                         } while (!int.TryParse(Console.ReadLine(), out studentInput));
                         Console.Clear();
+                        // Studenten anzeigen
                         if (studentInput == 0)
                         {
-                            students.ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName} {s.Email}"));
+                            Console.WriteLine("Alle Schüler: ");
+                            students.ForEach(s => Console.WriteLine($"{s.FirstName, -15} {s.LastName, -15} {s.Email}"));
                             Console.ReadKey();
                         }
+                        // Studenten hinzufügen
                         if(studentInput == 1)
                         {
-                            Console.Write("Gebe den Vornamen des Schülers ein: ");
-                            string firstName = Console.ReadLine();
-                            Console.Write("Gebe den Nachnamen des Schülers ein: ");
-                            string lastName = Console.ReadLine();
-                            Console.Write("Gebe den Email des Schülers ein: ");
-                            string email = Console.ReadLine();
+                            string firstName, lastName, email;
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Gebe den Vornamen des Schülers ein: ");
+                                firstName = Console.ReadLine();
+                            } while (firstName.Length == 0);
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Gebe den Nachnamen des Schülers ein: ");
+                                lastName = Console.ReadLine();
+                            } while (lastName.Length == 0);
+                            do
+                            {
+                                Console.Clear();
+                                Console.Write("Gebe den Email des Schülers ein: ");
+                                email = Console.ReadLine();
+                            } while (email.Length == 0);
+
                             students.Add(new Student(firstName, lastName, email));
                             Console.WriteLine("Schüler wurde hinzugefügt");
                             Console.ReadKey();
                         }
+                        // Studenten entfernen
                         if(studentInput == 2)
                         {
                             if (students.Count == 0)
@@ -519,11 +688,13 @@ namespace Stundenplaner_Projekt
                             students.Remove(students[studentIndex]);
                         }
                         break;
+                    // Verwaltung & Erstellung Stundenplan
                     case 5:
                         Console.Clear();
                         Console.WriteLine("0: bestehenden Stundeplan anzeigen");
                         Console.WriteLine("1: neuen Stundenplan erstellen");
                         byte timetableInput = Convert.ToByte(Console.ReadLine());
+                        // Stundenplan anzeigen
                         if(timetableInput == 0)
                         {
                             Console.Clear();
@@ -538,6 +709,7 @@ namespace Stundenplaner_Projekt
                             }
                             Console.ReadLine();
                         }
+                        // neuen Stundenplan erstellen
                         if (timetableInput == 1)
                         {
                             Console.Clear();
@@ -560,11 +732,13 @@ namespace Stundenplaner_Projekt
                             
                             Console.Clear();
 
-                            List<Dictionary<TimeBlock, Combination>> newTimtable = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan(offPeakTime, betweenTime, efficientRoom);
-                            foreach (var schoolClass in newTimtable)
+                            new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan(offPeakTime, betweenTime, efficientRoom);
+                            foreach (var schoolClass in schoolClasses)
                             {
-                                foreach (var timetable in schoolClass)
-                                    Console.WriteLine($"{timetable.Value.Time.Day} {timetable.Value.Time.GetHours} {timetable.Value.Subject.Name} - {timetable.Value.Teacher.FirstName} {timetable.Value.Teacher.LastName} - {timetable.Value.Room.RoomId}");
+                                if (schoolClass.Timetable == null) continue;
+                                Console.WriteLine(schoolClass.Name);
+                                foreach (var timetable in schoolClass.Timetable)
+                                    Console.WriteLine($"{timetable.Value.Time.Day, -12} {timetable.Value.Time.GetHours, -6} \t {timetable.Value.Subject.Name, -18} {timetable.Value.Teacher.FirstName, -10} {timetable.Value.Teacher.LastName, -12} {timetable.Value.Room.RoomId, -6}");
                                 Console.WriteLine("------------------");
                             }
                             Console.ReadLine();

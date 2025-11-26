@@ -2,10 +2,19 @@
 
 namespace Stundenplaner_Projekt
 {
+    /// <summary>
+    /// TimeBlock wird benutzt um die Zeiten festzuhalten wo Lehrer verfügbar sind, und wann unterricht ist
+    /// </summary>
     public class TimeBlock
     {
+        /// <summary>
+        /// Auswahl welcher Schultag betroffen ist
+        /// </summary>
         public enum Weekday { Montag = 1, Dienstag = 2, Mittwoch = 3, Donnerstag = 4, Freitag = 5 }
 
+        /// <summary>
+        /// Auswahl welche Zeit die Verfügbarkeit herrscht
+        /// </summary>
         public readonly static string[] Hours =
         {
             "8:00 - 9:00",
@@ -19,16 +28,37 @@ namespace Stundenplaner_Projekt
             "16:00 - 17:00"
         };
 
+        /// <summary>
+        /// Gibt die gesammten Arbeitstunden wider 
+        /// </summary>
         public static int WorkHours { get; } = Hours.Length;
+        /// <summary>
+        /// Gibt den Tag zurück
+        /// </summary>
         public Weekday Day { get; }
+        /// <summary>
+        /// Gibt den Index von der Stunde zurück
+        /// </summary>
         public int BlockIndex { get; }
+        /// <summary>
+        /// Gibt den die Stunde zurück als Textform
+        /// </summary>
         public string GetHours => Hours[BlockIndex];
         
+        /// <summary>
+        /// Setzt TimeBlock mit einem Parameter
+        /// </summary>
+        /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
         public TimeBlock(Weekday weekday)
         {
             Day = weekday;
         }
 
+        /// <summary>
+        /// Setzt TimeBlock mit zwei Parametern
+        /// </summary>
+        /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
+        /// <param name="blockIndex">Welche Stunde betroffen ist</param>
         public TimeBlock(Weekday weekday, int blockIndex) : this(weekday)
         {
             BlockIndex = blockIndex;
