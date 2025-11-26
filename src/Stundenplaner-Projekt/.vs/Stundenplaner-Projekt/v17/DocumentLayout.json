@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplaner-projekt\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\timeblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplaner-projekt\\combination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\combination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\combination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -66,8 +66,7 @@
               "RelativeToolTip": "Stundenplaner-Projekt\\Person.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwBIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T21:51:44.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:51:44.593Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Stundenplaner-Projekt\\TimeBlock.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwAgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T21:31:10.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:31:10.423Z"
             },
             {
               "$type": "Document",
@@ -165,8 +163,7 @@
               "RelativeToolTip": "Stundenplaner-Projekt\\Combination.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T21:18:45.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:18:45.017Z"
             }
           ]
         }
