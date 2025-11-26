@@ -1091,7 +1091,7 @@
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -1151,10 +1151,10 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow fill="BLACK" type="NONE"/>
+						<yjs:Arrow stroke="#FF000000" fill="SNOW" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" lengthScale="5" widthScale="5" type="NONE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -1167,10 +1167,10 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow fill="BLACK" type="NONE"/>
+						<yjs:Arrow stroke="#FF000000" fill="WHITE" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" lengthScale="5" widthScale="5" type="NONE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -1183,10 +1183,10 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow fill="BLACK" type="NONE"/>
+						<yjs:Arrow stroke="#FF000000" fill="WHITE" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" lengthScale="5" widthScale="5" type="NONE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -1199,10 +1199,10 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow fill="BLACK" type="NONE"/>
+						<yjs:Arrow stroke="#FF000000" fill="WHITE" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" lengthScale="5" widthScale="5" type="NONE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
