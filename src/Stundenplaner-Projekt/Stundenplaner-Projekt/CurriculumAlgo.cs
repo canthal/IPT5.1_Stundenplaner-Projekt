@@ -27,13 +27,6 @@ namespace Stundenplaner_Projekt
         /// </summary>
         private List<Room> _rooms;
 
-        private int _countPeakOffTime = 0;
-        private int _countBetweenTime = 0;
-        private int _countEfficiency = 0;
-        public int CountPeakOffTime { get => _countPeakOffTime; private set { _countPeakOffTime = value; } }
-        public int CountBetweenTime { get => _countBetweenTime; private set { _countBetweenTime = value; } }
-        public int CountEfficiency { get => _countEfficiency; private set { _countEfficiency = value; } }
-
         /// <summary>
         /// Liste von Fächern wird verwendet, um für interne Methoden wie Matrix erstellung die einzelnen Fächer zur verfügung zu stellen
         /// </summary>
@@ -74,7 +67,7 @@ namespace Stundenplaner_Projekt
         /// <param name="subjects">Liste aus den Fächern die verwendet werden sollen</param>
         /// <param name="teachers">Liste von jedem aktiven Lehrer</param>
         /// <param name="rooms">Liste aus allen betriebsbereiten Räumen</param>
-        internal CurriculumAlgo(List<SchoolClass> schoolClasses,List<Subject> subjects, List<Teacher> teachers, List<Room> rooms)
+        internal CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms)
         {
             SchoolClasses = schoolClasses;
             Subjects = subjects;
@@ -122,21 +115,17 @@ namespace Stundenplaner_Projekt
         private int GetValuation(List<Combination> timetable, int offPeakTime = 5, int betweenHours = 5, int efficientRoomUsing = 20)
         {
             int value = 1000;
-            HashSet<string> memorizeRooms = new(); 
+            HashSet<string> memorizeRooms = new();
             foreach (var t in timetable)
             {
                 if ((t.Time.BlockIndex == 0) || (t.Time.BlockIndex == WorkHours - 1))
                 {
                     value -= offPeakTime;
-                    CountPeakOffTime++;
                 }
-                if (!memorizeRooms.Any(m => m == t.Room.RoomId))
+                if (!memorizeRooms.Contains(t.Room.RoomId))
                     memorizeRooms.Add(t.Room.RoomId);
                 else
-                {
-                    value -= efficientRoomUsing;
-                    CountEfficiency++;
-                }
+                    value -= betweenHours;
             }
 
             int firstHour = int.MaxValue;
@@ -149,16 +138,13 @@ namespace Stundenplaner_Projekt
                 bool isValue = false;
                 foreach (var item in timetable)
                 {
-                    if(item.Time.BlockIndex == i) {
+                    if (item.Time.BlockIndex == i)
+                    {
                         isValue = true;
                         break;
                     }
                 }
-                if (!isValue)
-                {
-                    value -= betweenHours;
-                    CountBetweenTime++;
-                }
+                if (!isValue) value -= efficientRoomUsing;
             }
             return value;
         }
@@ -177,8 +163,7 @@ namespace Stundenplaner_Projekt
                 Dictionary<TimeBlock, Combination> tempComb = new();
                 for (int i = 1; i <= 5; i++)
                 {
-                    
-                    for (int j = 0; j <= rnd.Next(3, 8); j++)
+                    for (int j = 0; j <= 4; j++)
                     {
                         TimeBlock timeBlock;
                         Combination combination;
@@ -226,12 +211,12 @@ namespace Stundenplaner_Projekt
             List<Dictionary<TimeBlock, Combination>> tempDic = new();
             for (int i = 0; i < curriculums.Count; i++)
             {
-                SchoolClasses[i].Timetable = new Dictionary<TimeBlock, Combination>();
+                if (SchoolClasses[i].Timetable == null) SchoolClasses[i].Timetable = new Dictionary<TimeBlock, Combination>();
 
                 Dictionary<TimeBlock, Combination> sortedDic = new();
                 foreach (var t in curriculums[i].OrderBy(k => k.Key.Day).ThenBy(k => k.Key.BlockIndex))
                     sortedDic.Add(t.Key, new Combination(t.Value.Subject, t.Value.Teacher, t.Value.Room, t.Key));
-                    SchoolClasses[i].Timetable.Clear();
+                SchoolClasses[i].Timetable.Clear();
                 foreach (var s in sortedDic)
                     SchoolClasses[i].Timetable.Add(s.Key, s.Value);
                 tempDic.Add(sortedDic);
@@ -241,4 +226,3 @@ namespace Stundenplaner_Projekt
         }
     }
 }
-

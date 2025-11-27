@@ -17,6 +17,135 @@ namespace Stundenplaner_Projekt
             List<Subject> subjects = Datenmanager.LoadDataSubject();
             List<Teacher> teachers = Datenmanager.LoadDataTeacher();
 
+            teachers = new()
+            {
+                new Teacher("Anna", "Meier", new() { subjects[0], subjects[5] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 6)
+                    }),
+
+                new Teacher("Lukas", "Keller", new() { subjects[1], subjects[2] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 7)
+                    }),
+
+                new Teacher("Mila", "Aydin", new() { subjects[4], subjects[19] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
+                    }),
+
+                new Teacher("Jonas", "Stein", new() { subjects[10] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 0),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 2),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 6)
+                    }),
+
+                new Teacher("Laura", "Brunner", new() { subjects[3], subjects[8] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 6)
+                    }),
+
+                new Teacher("Felix", "Schmid", new() { subjects[6], subjects[7] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 6),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 8)
+                    }),
+
+                new Teacher("Nora", "Graf", new() { subjects[9], subjects[12] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 7),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 8)
+                    }),
+
+                new Teacher("Daniel", "Ziegler", new() { subjects[0], subjects[13] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 7),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 2)
+                    }),
+
+                new Teacher("Sophie", "Lehmann", new() { subjects[14], subjects[15] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 1),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
+                    }),
+
+                new Teacher("Timo", "Bauer", new() { subjects[16], subjects[4] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 6)
+                    }),
+
+                new Teacher("Clara", "Huber", new() { subjects[18], subjects[2] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 0),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 8)
+                    }),
+
+                new Teacher("Simon", "Fischer", new() { subjects[5], subjects[6] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 1),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 6),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8)
+                    }),
+
+                new Teacher("Eva", "Arnold", new() { subjects[7], subjects[8] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 3),
+                        new TimeBlock(TimeBlock.Weekday.Dienstag, 5),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 7),
+                        new TimeBlock(TimeBlock.Weekday.Donnerstag, 8)
+                    }),
+
+                new Teacher("David", "Kunz", new() { subjects[9], subjects[10] },
+                    new()
+                    {
+                        new TimeBlock(TimeBlock.Weekday.Montag, 2),
+                        new TimeBlock(TimeBlock.Weekday.Montag, 4),
+                        new TimeBlock(TimeBlock.Weekday.Mittwoch, 5),
+                        new TimeBlock(TimeBlock.Weekday.Freitag, 7)
+                    })
+            };
+
             bool isContinueOn = true;
             // Benutzerinterface welches so lange läuft bis Program geschlossen wird
             while (isContinueOn)
@@ -552,6 +681,7 @@ namespace Stundenplaner_Projekt
 
                             CurriculumAlgo curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms);
                             curriculumAlgo.GetBestPlan(offPeakTime, betweenTime, efficientRoom);
+
                             foreach (var schoolClass in schoolClasses)
                             {
                                 if (schoolClass.Timetable == null) continue;

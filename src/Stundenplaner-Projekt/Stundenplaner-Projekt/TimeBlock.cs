@@ -50,7 +50,6 @@ namespace Stundenplaner_Projekt
         /// Setzt TimeBlock mit einem Parameter
         /// </summary>
         /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
-        [JsonConstructor]
         public TimeBlock(Weekday day)
         {
             Day = day;
@@ -61,8 +60,8 @@ namespace Stundenplaner_Projekt
         /// </summary>
         /// <param name="weekday">Welcher arbeitstag betroffen ist</param>
         /// <param name="blockIndex">Welche Stunde betroffen ist</param>
- 
-        public TimeBlock(Weekday weekday, int blockIndex) : this(weekday)
+        [JsonConstructor]
+        public TimeBlock(Weekday day, int blockIndex) : this(day)
         {
             BlockIndex = blockIndex;
         }

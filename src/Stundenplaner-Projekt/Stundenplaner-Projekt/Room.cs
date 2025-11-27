@@ -36,11 +36,8 @@ namespace Stundenplaner_Projekt
                 _maxStudent = value;
             }
         }
+
         [JsonConstructor]
-        public Room(string roomId)
-        {
-            RoomId = roomId;
-        }
         public Room(string roomId, int maxStudent)
         {
             RoomId = roomId;
