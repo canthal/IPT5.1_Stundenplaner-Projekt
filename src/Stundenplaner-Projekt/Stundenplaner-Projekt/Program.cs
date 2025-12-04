@@ -10,7 +10,7 @@ namespace Stundenplaner_Projekt
     {
         static void Main(string[] args)
         {
-            //Listen von Klassen die für die Laufzeit gebraucht werden, von Dateimanager aus.
+            // Listen von Klassen die für die Laufzeit gebraucht werden, von Dateimanager aus.
             List<Room> rooms = Datenmanager.LoadDataRoom();
             List<SchoolClass> schoolClasses = Datenmanager.LoadDataSchoolClass();
             List<Student> students = Datenmanager.LoadDataStudent();

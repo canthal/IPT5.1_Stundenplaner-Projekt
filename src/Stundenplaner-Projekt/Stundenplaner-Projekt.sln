@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stundenplaner-Projekt", "Stundenplaner-Projekt\Stundenplaner-Projekt.csproj", "{B0F3AD11-0415-40B7-864C-7842406900B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StundenplanerTest", "StundenplanerTest\StundenplanerTest.csproj", "{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B0F3AD11-0415-40B7-864C-7842406900B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F3AD11-0415-40B7-864C-7842406900B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F3AD11-0415-40B7-864C-7842406900B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = StundenplanerTest
+build_property.ProjectDir = C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\StundenplanerTest\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
