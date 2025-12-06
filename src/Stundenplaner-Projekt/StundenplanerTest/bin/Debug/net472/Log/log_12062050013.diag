@@ -1,0 +1,16 @@
+2025-12-06T20:45:50.0319069+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 1.4.3+c252b64ad913ea9411fc5d17bfd5580d2d061497
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 20:45:49.990
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 26280
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: X64 - .NET Framework 4.8.9323.0
+2025-12-06T20:45:50.0334818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.dll
+2025-12-06T20:45:50.0350618+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: False
+2025-12-06T20:45:50.0350618+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\StundenplanerTest\bin\Debug\net472\StundenplanerTest.exe
+2025-12-06T20:45:50.0350618+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\StundenplanerTest\bin\Debug\net472\Log --results-directory C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\TestResults --client-port 54681'
+2025-12-06T20:45:50.0357299+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2025-12-06T20:45:50.1353433+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2025-12-06T20:45:50.1502774+00:00 Microsoft.Testing.Platform.Configurations.JsonConfigurationSource+JsonConfigurationProvider INFORMATION Config file 'C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\StundenplanerTest\bin\Debug\net472\StundenplanerTest.testconfig.json' not found.
+2025-12-06T20:45:50.1568213+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable:  VSTest mode: False
+2025-12-06T20:45:50.6534963+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: 'MSTestExtension' Version: '3.6.4' DisplayName: 'MSTest' Description: 'MSTest Framework for Microsoft Testing Platform'
+2025-12-06T20:45:51.5088112+00:00 Microsoft.Testing.Extensions.VSTestBridge.ObjectModel.MessageLoggerAdapter INFORMATION Testparallelisierung aktiviert für C:\Users\sanji\Documents\GitHub\IPT5.1_Stundenplaner-Projekt\src\Stundenplaner-Projekt\StundenplanerTest\bin\Debug\net472\StundenplanerTest.exe (Worker: 16, Bereich: MethodLevel)

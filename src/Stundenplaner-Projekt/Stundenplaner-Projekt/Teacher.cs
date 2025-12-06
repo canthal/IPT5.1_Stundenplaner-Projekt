@@ -9,7 +9,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Klasse Lehrer welche Schulklassen unterrichten, erbt von Person
     /// </summary>
-    internal class Teacher : Person
+    public class Teacher : Person
     {
         /// <summary>
         /// Speicher für Liste an Fächern die unterrichtet werden vom Lehrer

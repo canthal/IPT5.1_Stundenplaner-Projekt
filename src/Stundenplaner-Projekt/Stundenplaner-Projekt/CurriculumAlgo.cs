@@ -8,7 +8,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Berechnet den Stundenplan welcher dann entgegen genommen werden kann von anderen Klassen
     /// </summary>
-    internal class CurriculumAlgo
+    public class CurriculumAlgo
     {
         /// <summary>
         /// Speicherung der Liste Fächer
@@ -33,7 +33,11 @@ namespace Stundenplaner_Projekt
         internal List<Subject> Subjects
         {
             get => _subjects;
-            private set => _subjects = value;
+            private set
+            {
+                if (value.Count < 5) throw new Exception("Zu wenige Fächer eingereicht!");
+                _subjects = value;
+            }
         }
         /// <summary>
         /// Liste von Lehrer wird verwendet, um für interne Methoden wie Matrix erstellung die einzelnen Fächer zur verfügung zu stellen
@@ -41,7 +45,11 @@ namespace Stundenplaner_Projekt
         internal List<Teacher> Teachers
         {
             get => _teachers;
-            private set => _teachers = value;
+            private set
+            {
+                if (value.Count < 5) throw new Exception("Zu wenige Lehrer eingereicht!");
+                _teachers = value;
+            }
         }
         /// <summary>
         /// Liste von Fächern wird Räume, um für interne Methoden wie Matrix erstellung die einzelnen Fächer zur verfügung zu stellen
@@ -49,7 +57,11 @@ namespace Stundenplaner_Projekt
         internal List<Room> Rooms
         {
             get => _rooms;
-            private set => _rooms = value;
+            private set
+            {
+                if (value.Count < 5) throw new Exception("Zu wenige Räume eingereicht!");
+                _rooms = value;
+            }
         }
         /// <summary>
         /// Liste von Schulklasse wird verwendet, um für interne Methoden wie Matrix erstellung die einzelnen Fächer zur verfügung zu stellen
@@ -57,7 +69,11 @@ namespace Stundenplaner_Projekt
         internal List<SchoolClass> SchoolClasses
         {
             get => _schoolClasses;
-            private set => _schoolClasses = value;
+            private set
+            {
+                if (value.Count < 1) throw new Exception("Zu wenige Klassen eingereicht!");
+                _schoolClasses = value;
+            }
         }
 
         /// <summary>
@@ -67,7 +83,7 @@ namespace Stundenplaner_Projekt
         /// <param name="subjects">Liste aus den Fächern die verwendet werden sollen</param>
         /// <param name="teachers">Liste von jedem aktiven Lehrer</param>
         /// <param name="rooms">Liste aus allen betriebsbereiten Räumen</param>
-        internal CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms)
+        public CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms)
         {
             SchoolClasses = schoolClasses;
             Subjects = subjects;
@@ -98,7 +114,7 @@ namespace Stundenplaner_Projekt
                 from time in GetCurricullumTime()
                 from subject in Subjects
                 from teacher in Teachers
-                where teacher.TeachingSubjects.Any(s => s.Name == subject.Name) && teacher.AvailableBlocks.Any(t => t.Day == time.Day) && teacher.AvailableBlocks.Any(t => t.BlockIndex == time.BlockIndex)
+                where teacher.TeachingSubjects.Any(s => s.Name == subject.Name) && teacher.AvailableBlocks.Any(t => t.Day == time.Day && t.BlockIndex == time.BlockIndex)
                 from room in Rooms
                 select new Combination(subject, teacher, room, time);
             return allComb.ToList();
@@ -125,7 +141,7 @@ namespace Stundenplaner_Projekt
                 if (!memorizeRooms.Contains(t.Room.RoomId))
                     memorizeRooms.Add(t.Room.RoomId);
                 else
-                    value -= betweenHours;
+                    value -= efficientRoomUsing;
             }
 
             int firstHour = int.MaxValue;
@@ -144,7 +160,7 @@ namespace Stundenplaner_Projekt
                         break;
                     }
                 }
-                if (!isValue) value -= efficientRoomUsing;
+                if (!isValue) value -= betweenHours;
             }
             return value;
         }
@@ -165,15 +181,18 @@ namespace Stundenplaner_Projekt
                 {
                     for (int j = 0; j <= 4; j++)
                     {
+                        if (allCombinations.Count == 0) throw new Exception("Keine Kombinationen mehr verfügbar!");
+
                         TimeBlock timeBlock;
                         Combination combination;
                         do
                         {
-                            combination = allCombinations[rnd.Next(0, allCombinations.Count - 1)];
+                            combination = allCombinations[rnd.Next(0, allCombinations.Count)];
                             timeBlock = new TimeBlock((Weekday)i, combination.Time.BlockIndex);
                         } while (tempComb.Keys.Any(time => ((time.BlockIndex == timeBlock.BlockIndex) && (time.Day == timeBlock.Day))));
                         tempComb.Add(timeBlock, combination);
-                        allCombinations.Remove(combination);
+
+                        allCombinations.RemoveAll(e => e.Teacher.FirstName == combination.Teacher.FirstName && e.Teacher.LastName == combination.Teacher.LastName && e.Time.Day == combination.Time.Day && e.Time.BlockIndex == combination.Time.BlockIndex);
                     }
                 }
                 allCurr.Add(tempComb);
@@ -193,7 +212,7 @@ namespace Stundenplaner_Projekt
             List<Dictionary<TimeBlock, Combination>> curriculums = new();
 
             int bestScore = 0;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 List<Dictionary<TimeBlock, Combination>> currList = GetRandomCurriculum();
                 int avgVal = 0;

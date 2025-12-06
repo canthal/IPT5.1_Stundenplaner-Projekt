@@ -5,7 +5,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Klasse die die Beziehungen zwischen weiteren Klassen auffasst, um für den Algorithmus Informationen zur verfügung zu stellen.
     /// </summary>
-    internal class Combination
+    public class Combination
     {
         /// <summary>
         /// Fach, welches für interne Zwecke verwendet wird.

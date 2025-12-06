@@ -6,7 +6,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Schüler welcher in eine Schulklasse gehört, erbt von Person
     /// </summary>
-    internal class Student : Person
+    public class Student : Person
     {
         /// <summary>
         /// Setzt Schüler, nimmt zwei Argumente an

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Stundenplaner_Projekt
 {
-    internal class SchoolClass
+    public class SchoolClass
     {
         /// <summary>
         /// Speicherort für Name der Schulklasse

@@ -10,7 +10,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Fach welches von Lehrern unterrichtet wird
     /// </summary>
-    internal class Subject
+    public class Subject
     {
         /// <summary>
         /// Speicher für den Namen des Faches

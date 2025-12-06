@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 namespace Stundenplaner_Projekt
 {
-    internal class Room
+    public class Room
     {
         private string _roomId;
         private int _maxStudent;
