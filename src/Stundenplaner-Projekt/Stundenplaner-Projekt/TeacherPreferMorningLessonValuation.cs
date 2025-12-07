@@ -11,7 +11,7 @@ namespace Stundenplaner_Projekt
         public string Name { get; } = "TeacherPreferMorningLessonValuation";
         public int GetTotalScore(List<Combination> timetable)
         {
-            return 0;
+            throw new NotImplementedException();
         }
     }
 }
