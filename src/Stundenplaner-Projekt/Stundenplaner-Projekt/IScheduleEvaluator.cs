@@ -8,15 +8,7 @@ namespace Stundenplaner_Projekt
 {
     public interface IScheduleEvaluator
     {
-        //List<Combination> Timetable { get; }
-
-        //int OffPeakTime { get; }
-        //int BetweenHours { get; }
-        //int EfficientRoomUsing { get; }
-
-        //int GetOffPeakTimeReduction();
-        //int GetBetweenHoursReduction();
-        //int GetEfficientRoomUsingReduction();
+        string Name { get; }
         int GetTotalScore(List<Combination> timetable);
     }
 }

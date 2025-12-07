@@ -550,7 +550,7 @@ namespace Stundenplaner_Projekt
                             
                             Console.Clear();
 
-                            IScheduleGenerator curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(offPeakTime, betweenTime, efficientRoom));
+                            IScheduleGenerator curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation(offPeakTime, betweenTime, efficientRoom));
                             curriculumAlgo.GetBestPlan();
 
                             foreach (var schoolClass in schoolClasses)

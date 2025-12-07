@@ -77,13 +77,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassNotMoreThenSixLessonsValuation.cs" />
     <Compile Include="Combination.cs" />
     <Compile Include="CurriculumAlgo.cs" />
-    <Compile Include="CurriculumValuation.cs" />
+    <Compile Include="BasicValuation.cs" />
     <Compile Include="Datenmanager.cs" />
+    <Compile Include="EqualRoomUsingValuation.cs" />
     <Compile Include="IPersistenceService.cs" />
     <Compile Include="IScheduleEvaluator.cs" />
     <Compile Include="IScheduleGenerator.cs" />
+    <Compile Include="MinimizeRoomChangeValuation.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherPreferMorningLessonValuation.cs" />
     <Compile Include="TimeBlock.cs" />
   </ItemGroup>
   <ItemGroup>
