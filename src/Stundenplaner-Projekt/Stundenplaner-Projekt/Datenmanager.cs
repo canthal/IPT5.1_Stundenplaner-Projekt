@@ -3,35 +3,35 @@ using System.Text.Json;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Stundenplaner_Projekt
+namespace Stundenplaner_Projekt 
 {
     /// <summary>
     /// Speichert alle Daten in den Klassen die während der Laufzeit hinzugekommen sind und gibt diese frei, wenn das Programm gestartet wird  
     /// </summary>
     public static class Datenmanager
     {
-        private static readonly string basePath = AppContext.BaseDirectory;
+        private static readonly string BasePath = AppContext.BaseDirectory;
 
         /// <summary>
         /// Pfad für Klasse Room
         /// </summary>
-        private static string pathRoom = Path.Combine(basePath, "room.json") ;
+        private static string pathRoom = Path.Combine(BasePath, "room.json") ;
         /// <summary>
         /// Pfad für Klasse Schulklasse
         /// </summary>
-        private static string pathSchoolClass = Path.Combine(basePath, "schoolClass.json");
+        private static string pathSchoolClass = Path.Combine(BasePath, "schoolClass.json");
         /// <summary>
         /// Pfad für Klasse Student
         /// </summary>
-        private static string pathStudent = Path.Combine(basePath, "student.json");
+        private static string pathStudent = Path.Combine(BasePath, "student.json");
         /// <summary>
         /// Pfad für Klasse Subject
         /// </summary>
-        private static string pathSubject = Path.Combine(basePath, "subject.json");
+        private static string pathSubject = Path.Combine(BasePath, "subject.json");
         /// <summary>
         /// Pfad für Klasse Teacher
         /// </summary>
-        private static string pathTeacher = Path.Combine(basePath, "teacher.json");
+        private static string pathTeacher = Path.Combine(BasePath, "teacher.json");
 
         /// <summary>
         /// Speichert alle Daten von Klassen namens Room 

@@ -8,7 +8,7 @@ namespace Stundenplaner_Projekt
     /// <summary>
     /// Berechnet den Stundenplan welcher dann entgegen genommen werden kann von anderen Klassen
     /// </summary>
-    public class CurriculumAlgo
+    public class CurriculumAlgo : IScheduleGenerator
     {
         /// <summary>
         /// Speicherung der Liste Fächer
@@ -76,6 +76,8 @@ namespace Stundenplaner_Projekt
             }
         }
 
+        public IScheduleEvaluator ScheduleEvaluator { get; }
+
         /// <summary>
         /// Um den Algorithmus benutzen zu können, muss man erstmal es Instanziieren und alle Daten reinfüttern, bevor man es benutzen kann.
         /// </summary>
@@ -83,12 +85,13 @@ namespace Stundenplaner_Projekt
         /// <param name="subjects">Liste aus den Fächern die verwendet werden sollen</param>
         /// <param name="teachers">Liste von jedem aktiven Lehrer</param>
         /// <param name="rooms">Liste aus allen betriebsbereiten Räumen</param>
-        public CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms)
+        public CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms, IScheduleEvaluator scheduleEvaluator)
         {
             SchoolClasses = schoolClasses;
             Subjects = subjects;
             Teachers = teachers;
             Rooms = rooms;
+            ScheduleEvaluator = scheduleEvaluator;
         }
 
         /// <summary>
@@ -118,51 +121,6 @@ namespace Stundenplaner_Projekt
                 from room in Rooms
                 select new Combination(subject, teacher, room, time);
             return allComb.ToList();
-        }
-
-        /// <summary>
-        /// Berechnet pro Stundenplan pro Klasse eine Bewertung, basierend auf Randzeiten, Zwischenstunden und Effizients von der Nutzung der Zimmer.
-        /// </summary>
-        /// <param name="timetable">Einspeisung eines Stundenplanes einer Klasse</param>
-        /// <param name="offPeakTime">Gewichtung der Randzeiten</param>
-        /// <param name="betweenHours">Gewichtung der Zwischenstunden</param>
-        /// <param name="efficientRoomUsing">Gewichtung der effizients der Raumnutzung</param>
-        /// <returns></returns>
-        private int GetValuation(List<Combination> timetable, int offPeakTime = 5, int betweenHours = 5, int efficientRoomUsing = 20)
-        {
-            int value = 1000;
-            HashSet<string> memorizeRooms = new();
-            foreach (var t in timetable)
-            {
-                if ((t.Time.BlockIndex == 0) || (t.Time.BlockIndex == WorkHours - 1))
-                {
-                    value -= offPeakTime;
-                }
-                if (!memorizeRooms.Contains(t.Room.RoomId))
-                    memorizeRooms.Add(t.Room.RoomId);
-                else
-                    value -= efficientRoomUsing;
-            }
-
-            int firstHour = int.MaxValue;
-            foreach (var item in timetable)
-                if (item.Time.BlockIndex < firstHour)
-                    firstHour = item.Time.BlockIndex;
-
-            for (int i = firstHour; i < WorkHours - 1; i++)
-            {
-                bool isValue = false;
-                foreach (var item in timetable)
-                {
-                    if (item.Time.BlockIndex == i)
-                    {
-                        isValue = true;
-                        break;
-                    }
-                }
-                if (!isValue) value -= betweenHours;
-            }
-            return value;
         }
 
         /// <summary>
@@ -203,21 +161,18 @@ namespace Stundenplaner_Projekt
         /// <summary>
         /// Generiert auf Heuristischer Methode den nahezu besten Stundenplan auf zufallsbasierter Erstellung
         /// </summary>
-        /// <param name="offPeakTime">Gewichtung Randzeiten</param>
-        /// <param name="betweenHours">Gewichtung der Zwischenstunden</param>
-        /// <param name="efficientRoomUsing">Gewichtung der Effizients der Räume</param>
         /// <returns>Gibt den nahezu besten Stundenplan aus in einem Dictionary für jede Schulklasse und Tag</returns>
-        public List<Dictionary<TimeBlock, Combination>> GetBestPlan(int offPeakTime = 5, int betweenHours = 5, int efficientRoomUsing = 20)
+        public List<Dictionary<TimeBlock, Combination>> GetBestPlan()
         {
             List<Dictionary<TimeBlock, Combination>> curriculums = new();
 
             int bestScore = 0;
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 500; i++)
             {
                 List<Dictionary<TimeBlock, Combination>> currList = GetRandomCurriculum();
                 int avgVal = 0;
                 foreach (var cur in currList)
-                    avgVal += GetValuation(cur.Values.ToList(), offPeakTime, betweenHours, efficientRoomUsing);
+                    avgVal += ScheduleEvaluator.GetTotalScore(cur.Values.ToList());
                 avgVal /= currList.Count;
 
                 if (avgVal > bestScore)

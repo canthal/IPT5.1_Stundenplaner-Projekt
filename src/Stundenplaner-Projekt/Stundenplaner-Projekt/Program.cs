@@ -550,8 +550,8 @@ namespace Stundenplaner_Projekt
                             
                             Console.Clear();
 
-                            CurriculumAlgo curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms);
-                            curriculumAlgo.GetBestPlan(offPeakTime, betweenTime, efficientRoom);
+                            IScheduleGenerator curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(offPeakTime, betweenTime, efficientRoom));
+                            curriculumAlgo.GetBestPlan();
 
                             foreach (var schoolClass in schoolClasses)
                             {
@@ -561,6 +561,7 @@ namespace Stundenplaner_Projekt
                                     Console.WriteLine($"{timetable.Value.Time.Day, -12} {timetable.Value.Time.GetHours, -6} \t {timetable.Value.Subject.Name, -18} {timetable.Value.Teacher.FirstName, -10} {timetable.Value.Teacher.LastName, -12} {timetable.Value.Room.RoomId, -6}");
                                 Console.WriteLine("------------------");
                             }
+                            Console.WriteLine("Drücke beliebige Taste zum weitergehen ...");
                             Console.ReadLine();
                         }
                         break;

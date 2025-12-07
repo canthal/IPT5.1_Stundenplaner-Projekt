@@ -21,7 +21,7 @@ namespace StundenplanerTest
             teachers.Add(new Teacher("Max", "Mustermann", new List<Subject> { new Subject("Deutsch")}, new List<TimeBlock> { timeBlock }));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation()).GetBestPlan();
 
             bool isDoubleTeacher = false;
             int count = 0;
@@ -52,7 +52,7 @@ namespace StundenplanerTest
             rooms.Add(new Room("new Room", 20));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation()).GetBestPlan();
             
             List<int> times = new();
             foreach (var time in timetables)
@@ -78,9 +78,9 @@ namespace StundenplanerTest
             List<Teacher> teachers = CreateTeachers(subjects);
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan(5,5,5);
+            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(5, 5, 5)).GetBestPlan();
 
-            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms).GetBestPlan(20, 5,5);
+            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(20, 5, 5)).GetBestPlan();
 
             int countLowOffPeak = 0;
             foreach (var time in timetablesLowOffPeak)
@@ -96,6 +96,22 @@ namespace StundenplanerTest
 
             // Assert
             Assert.AreEqual(true, countHighOffPeak <= countLowOffPeak);
+        }
+
+        [TestMethod]
+        public void ErrorIfToFewDataByTimtableGen()
+        {
+            // Arrange
+            List<SchoolClass> schoolClasses = CreateClasses();
+            List<Subject> subjects = CreateSubjects();
+            List<Teacher> teachers = CreateTeachers(subjects);
+            List<Room> rooms = new();
+
+            // Act & Assert
+            Assert.ThrowsException<Exception>(() =>
+            {
+                new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation()).GetBestPlan();
+            });
         }
 
         [TestMethod]
