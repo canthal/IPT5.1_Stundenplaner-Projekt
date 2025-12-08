@@ -21,7 +21,7 @@ namespace StundenplanerTest
             teachers.Add(new Teacher("Max", "Mustermann", new List<Subject> { new Subject("Deutsch")}, new List<TimeBlock> { timeBlock }));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation()).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
 
             bool isDoubleTeacher = false;
             int count = 0;
@@ -52,7 +52,7 @@ namespace StundenplanerTest
             rooms.Add(new Room("new Room", 20));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation()).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
             
             List<int> times = new();
             foreach (var time in timetables)
@@ -78,9 +78,9 @@ namespace StundenplanerTest
             List<Teacher> teachers = CreateTeachers(subjects);
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation(5, 5, 5)).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation(5, 5, 5)).GetBestPlan();
 
-            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation(20, 5, 5)).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation(20, 5, 5)).GetBestPlan();
 
             int countLowOffPeak = 0;
             foreach (var time in timetablesLowOffPeak)
@@ -110,7 +110,7 @@ namespace StundenplanerTest
             // Act & Assert
             Assert.ThrowsException<Exception>(() =>
             {
-                new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new BasicValuation()).GetBestPlan();
+                new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
             });
         }
 

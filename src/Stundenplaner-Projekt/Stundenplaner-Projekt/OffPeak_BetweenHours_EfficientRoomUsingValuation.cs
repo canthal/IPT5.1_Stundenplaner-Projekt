@@ -8,7 +8,7 @@ using static Stundenplaner_Projekt.TimeBlock;
 
 namespace Stundenplaner_Projekt
 {
-    public class BasicValuation : IScheduleEvaluator
+    public class OffPeak_BetweenHours_EfficientRoomUsingValuation : IScheduleEvaluator
     {
 
         public const int BaseValue = 1000;
@@ -17,7 +17,7 @@ namespace Stundenplaner_Projekt
         public int BetweenHours { get; }
         public int EfficientRoomUsing { get; }
 
-        public BasicValuation(int offPeakTime = 5, int betweenHours = 5, int efficientRoomUsing = 5)
+        public OffPeak_BetweenHours_EfficientRoomUsingValuation(int offPeakTime = 5, int betweenHours = 5, int efficientRoomUsing = 5)
         {
             OffPeakTime = offPeakTime;
             BetweenHours = betweenHours;

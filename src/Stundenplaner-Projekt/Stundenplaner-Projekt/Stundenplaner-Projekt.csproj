@@ -80,7 +80,8 @@
     <Compile Include="ClassNotMoreThenSixLessonsValuation.cs" />
     <Compile Include="Combination.cs" />
     <Compile Include="CurriculumAlgo.cs" />
-    <Compile Include="BasicValuation.cs" />
+    <Compile Include="OffPeak_BetweenHours_EfficientRoomUsingValuation.cs" />
+    <Compile Include="CurriculumValuation.cs" />
     <Compile Include="Datenmanager.cs" />
     <Compile Include="EqualRoomUsingValuation.cs" />
     <Compile Include="IPersistenceService.cs" />

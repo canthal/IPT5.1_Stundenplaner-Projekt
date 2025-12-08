@@ -9,10 +9,28 @@ namespace Stundenplaner_Projekt
     public class MinimizeRoomChangeValuation : IScheduleEvaluator
     {
         public string Name { get; } = "MinimizeRoomChangeValuation";
-        public int GetTotalScore(List<Combination> timetable)
+
+        public const int BaseValue = 1000;
+        public int MinimizeRoomChange { get; }
+
+        public MinimizeRoomChangeValuation(int minimizeRoomChange)
         {
-            throw new NotImplementedException();
+            MinimizeRoomChange = minimizeRoomChange;
         }
+
+        public int GetMinimizeRoomChangeValuation(List<Combination> timetable)
+        {
+            int value = 0;
+            for (int i = 0; i < timetable.Count; i++)
+            {
+                string currRoom = timetable[i].Room.RoomId;
+                if (timetable[i + 1].Room.RoomId == currRoom) continue;
+                value += MinimizeRoomChange;
+            }
+            return value;
+        }
+
+        public int GetTotalScore(List<Combination> timetable) => BaseValue - GetMinimizeRoomChangeValuation(timetable);
 
     }
 }
