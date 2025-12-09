@@ -25,7 +25,7 @@ namespace Stundenplaner_Projekt
         public TimeBlock Time { get; }
 
         /// <summary>
-        /// Fasst die Beziehungen zwischen 4 Klassen auf.
+        /// Fasst die Beziehungen von 4 Klassen auf.
         /// </summary>
         /// <param name="subject">Fach welches der Lehrer unterrichtet</param>
         /// <param name="teacher">Lehrer der die Unterrichtlektion übernimmt</param>

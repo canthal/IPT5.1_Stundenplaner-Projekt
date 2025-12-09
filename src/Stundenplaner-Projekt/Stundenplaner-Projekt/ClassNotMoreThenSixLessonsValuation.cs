@@ -15,7 +15,7 @@ namespace Stundenplaner_Projekt
         public const int BaseValue = 1000;
         public int HigherThenSixLessonsValuation { get; }
 
-        public ClassNotMoreThenSixLessonsValuation(int higherThenSixLessonsPunishment)
+        public ClassNotMoreThenSixLessonsValuation(int higherThenSixLessonsPunishment = 5)
         {
             HigherThenSixLessonsValuation = higherThenSixLessonsPunishment;
         }

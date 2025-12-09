@@ -13,7 +13,7 @@ namespace Stundenplaner_Projekt
         public const int BaseValue = 1000;
         public int EqualRoomUsing { get; }
 
-        public EqualRoomUsingValuation(int equalRoomUsingPunishment)
+        public EqualRoomUsingValuation(int equalRoomUsingPunishment = 5)
         {
             EqualRoomUsing = equalRoomUsingPunishment;
         }

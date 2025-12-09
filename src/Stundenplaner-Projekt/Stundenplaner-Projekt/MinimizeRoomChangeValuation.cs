@@ -13,7 +13,7 @@ namespace Stundenplaner_Projekt
         public const int BaseValue = 1000;
         public int MinimizeRoomChange { get; }
 
-        public MinimizeRoomChangeValuation(int minimizeRoomChange)
+        public MinimizeRoomChangeValuation(int minimizeRoomChange = 5)
         {
             MinimizeRoomChange = minimizeRoomChange;
         }

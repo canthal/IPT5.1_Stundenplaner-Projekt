@@ -535,10 +535,10 @@ namespace Stundenplaner_Projekt
                             Console.Clear();
                             List<(IScheduleEvaluator, bool)> scheduleEvaluators = new()
                             {
-                                (new ClassNotMoreThenSixLessonsValuation(0), false),
-                                (new EqualRoomUsingValuation(0), false),
-                                (new MinimizeRoomChangeValuation(0), false),
-                                (new OffPeak_BetweenHours_EfficientRoomUsingValuation(0), false)
+                                (new ClassNotMoreThenSixLessonsValuation(), false),
+                                (new EqualRoomUsingValuation(), false),
+                                (new MinimizeRoomChangeValuation(), false),
+                                (new OffPeak_BetweenHours_EfficientRoomUsingValuation(), false)
                             };
                             do {
                                 Console.Clear();

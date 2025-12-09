@@ -1,6 +1,7 @@
 ﻿using Stundenplaner_Projekt;
 using System.Xml;
 using static Stundenplaner_Projekt.Datenmanager;
+using static Stundenplaner_Projekt.TimeBlock;
 using static StundenplanerTest.TestData;
 
 namespace StundenplanerTest
@@ -17,11 +18,11 @@ namespace StundenplanerTest
             List<Subject> subjects = CreateSubjects();
             List<Teacher> teachers = CreateTeachers(subjects);
 
-            TimeBlock timeBlock = new TimeBlock(TimeBlock.Weekday.Montag, 1);
+            TimeBlock timeBlock = new TimeBlock(Weekday.Montag, 1);
             teachers.Add(new Teacher("Max", "Mustermann", new List<Subject> { new Subject("Deutsch")}, new List<TimeBlock> { timeBlock }));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(new List<IScheduleEvaluator>() { new OffPeak_BetweenHours_EfficientRoomUsingValuation()})).GetBestPlan();
 
             bool isDoubleTeacher = false;
             int count = 0;
@@ -52,7 +53,7 @@ namespace StundenplanerTest
             rooms.Add(new Room("new Room", 20));
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetables = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(new List<IScheduleEvaluator>() { new OffPeak_BetweenHours_EfficientRoomUsingValuation()})).GetBestPlan();
             
             List<int> times = new();
             foreach (var time in timetables)
@@ -78,9 +79,9 @@ namespace StundenplanerTest
             List<Teacher> teachers = CreateTeachers(subjects);
 
             // Act
-            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation(5, 5, 5)).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetablesLowOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(new List<IScheduleEvaluator>() { new OffPeak_BetweenHours_EfficientRoomUsingValuation(5, 5, 5) })).GetBestPlan();
 
-            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation(20, 5, 5)).GetBestPlan();
+            List<Dictionary<TimeBlock, Combination>> timetablesHighOffPeak = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(new List<IScheduleEvaluator>() { new OffPeak_BetweenHours_EfficientRoomUsingValuation(20, 5, 5) })).GetBestPlan();
 
             int countLowOffPeak = 0;
             foreach (var time in timetablesLowOffPeak)
@@ -110,8 +111,57 @@ namespace StundenplanerTest
             // Act & Assert
             Assert.ThrowsException<Exception>(() =>
             {
-                new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation()).GetBestPlan();
+                new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(new List<IScheduleEvaluator>())).GetBestPlan();
             });
+        }
+
+        [TestMethod]
+        public void NotMoreThenSixLessonsValuation()
+        {
+            // Arrange
+            int weighting = 5;
+            List<Subject> subjects = CreateSubjects();
+            List<Teacher> teachers = CreateTeachers(subjects);
+            List<Room> rooms = CreateRooms();
+            Combination[] combinations =
+            {
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms.First(), new TimeBlock(Weekday.Montag, 0))
+            };
+
+            // Act
+            int result = new ClassNotMoreThenSixLessonsValuation(weighting).GetTotalScore(combinations.ToList());
+
+            // Assert
+            Assert.AreEqual(995, result);
+        }
+
+        [TestMethod]
+        public void MinimizeRoomChangeValuation()
+        {
+            // Arrange
+            int weighting = 5;
+            List<Subject> subjects = CreateSubjects();
+            List<Teacher> teachers = CreateTeachers(subjects);
+            List<Room> rooms = CreateRooms();
+            Combination[] combinations =
+            {
+                new Combination(subjects.First(), teachers.First(), rooms[0], new TimeBlock(Weekday.Montag, 0)),
+                new Combination(subjects.First(), teachers.First(), rooms[1], new TimeBlock(Weekday.Montag, 1)),
+                new Combination(subjects.First(), teachers.First(), rooms[2], new TimeBlock(Weekday.Montag, 2)),
+                new Combination(subjects.First(), teachers.First(), rooms[2], new TimeBlock(Weekday.Montag, 3)),
+            };
+
+            // Act
+            int result = new MinimizeRoomChangeValuation(weighting).GetTotalScore(combinations.ToList());
+
+            // Assert
+            Assert.AreEqual(990, result);
         }
 
         [TestMethod]
