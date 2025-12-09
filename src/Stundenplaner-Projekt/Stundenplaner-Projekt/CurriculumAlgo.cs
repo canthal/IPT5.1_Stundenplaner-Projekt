@@ -76,7 +76,7 @@ namespace Stundenplaner_Projekt
             }
         }
 
-        public IScheduleEvaluator ScheduleEvaluator { get; }
+        public CurriculumValuation CurriculumValuation { get; }
 
         /// <summary>
         /// Um den Algorithmus benutzen zu können, muss man erstmal es Instanziieren und alle Daten reinfüttern, bevor man es benutzen kann.
@@ -85,13 +85,13 @@ namespace Stundenplaner_Projekt
         /// <param name="subjects">Liste aus den Fächern die verwendet werden sollen</param>
         /// <param name="teachers">Liste von jedem aktiven Lehrer</param>
         /// <param name="rooms">Liste aus allen betriebsbereiten Räumen</param>
-        public CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms, IScheduleEvaluator scheduleEvaluator)
+        public CurriculumAlgo(List<SchoolClass> schoolClasses, List<Subject> subjects, List<Teacher> teachers, List<Room> rooms, CurriculumValuation curriculumValuation)
         {
             SchoolClasses = schoolClasses;
             Subjects = subjects;
             Teachers = teachers;
             Rooms = rooms;
-            ScheduleEvaluator = scheduleEvaluator;
+            CurriculumValuation = curriculumValuation;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Stundenplaner_Projekt
                 List<Dictionary<TimeBlock, Combination>> currList = GetRandomCurriculum();
                 int avgVal = 0;
                 foreach (var cur in currList)
-                    avgVal += ScheduleEvaluator.GetTotalScore(cur.Values.ToList());
+                    avgVal += CurriculumValuation.GetTotalScore(cur.Values.ToList());
                 avgVal /= currList.Count;
 
                 if (avgVal > bestScore)

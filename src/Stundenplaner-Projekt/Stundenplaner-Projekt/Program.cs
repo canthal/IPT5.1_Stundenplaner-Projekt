@@ -530,27 +530,92 @@ namespace Stundenplaner_Projekt
                         // neuen Stundenplan erstellen
                         if (timetableInput == 1)
                         {
-                            Console.Clear();
-                            int offPeakTime, betweenTime, efficientRoom;
-                            do
-                            {
-                                Console.Clear();
-                                Console.Write("Wie hoch sollen Randzeiten gewichtet werden? (0 - 20): ");
-                            } while (!int.TryParse(Console.ReadLine(), out offPeakTime));
-                            do
-                            {
-                                Console.Clear();
-                                Console.Write("Wie hoch sollen Zwischenstunden gewichtet werden? (0 - 20): ");
-                            } while (!int.TryParse(Console.ReadLine(), out betweenTime));
-                            do
-                            {
-                                Console.Clear();
-                                Console.Write("Wie hoch soll die effiziente Nutzung der Räume gewichtet werden? (0 - 40): ");
-                            } while (!int.TryParse(Console.ReadLine(), out efficientRoom));
-                            
-                            Console.Clear();
+                            int whichEvaluator,offPeakTime, betweenTime, efficientRoom, higherThenSixLesson, equalRoomUsing, minimizeRoomChange;
 
-                            IScheduleGenerator curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new OffPeak_BetweenHours_EfficientRoomUsingValuation(offPeakTime, betweenTime, efficientRoom));
+                            Console.Clear();
+                            List<(IScheduleEvaluator, bool)> scheduleEvaluators = new()
+                            {
+                                (new ClassNotMoreThenSixLessonsValuation(0), false),
+                                (new EqualRoomUsingValuation(0), false),
+                                (new MinimizeRoomChangeValuation(0), false),
+                                (new OffPeak_BetweenHours_EfficientRoomUsingValuation(0), false)
+                            };
+                            do {
+                                Console.Clear();
+                                Console.WriteLine("--------------------------------------");
+                                for (int i = 0; i < scheduleEvaluators.Count; i++)
+                                {
+                                    if (scheduleEvaluators[i].Item2) Console.WriteLine($"[{i}] [X] {scheduleEvaluators[i].Item1.Name}");
+                                    else Console.WriteLine($"[{i}] [ ] {scheduleEvaluators[i].Item1.Name}");
+                                }
+                                Console.WriteLine("--------------------------------------");
+                                string answer;
+                                do
+                                {
+                                    Console.WriteLine("Bist du zufrieden? (J/N):");
+                                    answer = Console.ReadKey().KeyChar.ToString().ToLower();
+                                    Console.WriteLine("\n");
+                                } while (!scheduleEvaluators.Any(s => s.Item2) && !(answer == "n"));
+                                if (answer == "j") break;
+                                do
+                                {
+                                    Console.WriteLine("Welche Evaluatoren willst du benutzen?");
+                                } while ((!int.TryParse(Console.ReadKey().KeyChar.ToString(), out whichEvaluator)));
+                                scheduleEvaluators[whichEvaluator] = (
+                                    scheduleEvaluators[whichEvaluator].Item1, !scheduleEvaluators[whichEvaluator].Item2
+                                );
+                            } while (true);
+
+                            if (scheduleEvaluators[0].Item2)
+                            {
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch soll die Gewichtung sein [{scheduleEvaluators[0].Item1.Name}]? (0 - 20): ");
+                                } while ((!int.TryParse(Console.ReadLine(), out higherThenSixLesson) && (higherThenSixLesson > 0 && higherThenSixLesson < 20)));
+                                scheduleEvaluators[0] = (new ClassNotMoreThenSixLessonsValuation(higherThenSixLesson), scheduleEvaluators[0].Item2);
+                            }
+                            if (scheduleEvaluators[1].Item2)
+                            {
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch soll die Gewichtung sein [{scheduleEvaluators[1].Item1.Name}]? (0 - 20): ");
+                                } while ((!int.TryParse(Console.ReadLine(), out equalRoomUsing) && (equalRoomUsing > 0 && equalRoomUsing < 20)));
+                                scheduleEvaluators[1] = (new EqualRoomUsingValuation(equalRoomUsing), scheduleEvaluators[1].Item2);
+                            }
+                            if (scheduleEvaluators[2].Item2)
+                            {
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch soll die Gewichtung sein [{scheduleEvaluators[2].Item1.Name}]? (0 - 20): ");
+                                } while ((!int.TryParse(Console.ReadLine(), out minimizeRoomChange) && (minimizeRoomChange > 0 && minimizeRoomChange < 20)));
+                                scheduleEvaluators[2] = (new MinimizeRoomChangeValuation(minimizeRoomChange), scheduleEvaluators[2].Item2);
+                            }
+                            if (scheduleEvaluators[3].Item2)
+                            {
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch sollen Randzeiten gewichtet werden [{scheduleEvaluators[3].Item1.Name}]? (0 - 20): ");
+                                } while (!int.TryParse(Console.ReadLine(), out offPeakTime));
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch sollen Zwischenstunden gewichtet werden [{scheduleEvaluators[3].Item1.Name}]? (0 - 20): ");
+                                } while (!int.TryParse(Console.ReadLine(), out betweenTime));
+                                do
+                                {
+                                    Console.Clear();
+                                    Console.Write($"Wie hoch soll die effiziente Nutzung der Räume gewichtet werden [{scheduleEvaluators[3].Item1.Name}]? (0 - 40): ");
+                                } while (!int.TryParse(Console.ReadLine(), out efficientRoom));
+                                scheduleEvaluators[3] = (new OffPeak_BetweenHours_EfficientRoomUsingValuation(efficientRoom), scheduleEvaluators[3].Item2);
+                            }
+
+
+                            Console.Clear();
+                            IScheduleGenerator curriculumAlgo = new CurriculumAlgo(schoolClasses, subjects, teachers, rooms, new CurriculumValuation(scheduleEvaluators.Where(s => s.Item2).Select(s => s.Item1).ToList()));
                             curriculumAlgo.GetBestPlan();
 
                             foreach (var schoolClass in schoolClasses)

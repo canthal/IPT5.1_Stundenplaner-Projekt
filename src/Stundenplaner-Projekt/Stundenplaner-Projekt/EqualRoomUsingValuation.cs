@@ -13,9 +13,9 @@ namespace Stundenplaner_Projekt
         public const int BaseValue = 1000;
         public int EqualRoomUsing { get; }
 
-        public EqualRoomUsingValuation(int equalRoomUsing)
+        public EqualRoomUsingValuation(int equalRoomUsingPunishment)
         {
-            EqualRoomUsing = equalRoomUsing;
+            EqualRoomUsing = equalRoomUsingPunishment;
         }
 
         public int GetEqualRoomUsingValuation(List<Combination> timetable)

@@ -21,7 +21,7 @@ namespace Stundenplaner_Projekt
         public int GetMinimizeRoomChangeValuation(List<Combination> timetable)
         {
             int value = 0;
-            for (int i = 0; i < timetable.Count; i++)
+            for (int i = 0; i < timetable.Count - 1; i++)
             {
                 string currRoom = timetable[i].Room.RoomId;
                 if (timetable[i + 1].Room.RoomId == currRoom) continue;

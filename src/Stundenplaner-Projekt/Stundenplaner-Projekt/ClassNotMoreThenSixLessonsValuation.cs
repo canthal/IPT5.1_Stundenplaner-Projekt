@@ -13,11 +13,11 @@ namespace Stundenplaner_Projekt
         public string Name { get; } = "ClassNotMoreThenSixLessonsValuation";
 
         public const int BaseValue = 1000;
-        public int HigherThenSixLessons { get; }
+        public int HigherThenSixLessonsValuation { get; }
 
-        public ClassNotMoreThenSixLessonsValuation(int higherThenSixLessons)
+        public ClassNotMoreThenSixLessonsValuation(int higherThenSixLessonsPunishment)
         {
-            HigherThenSixLessons = higherThenSixLessons;
+            HigherThenSixLessonsValuation = higherThenSixLessonsPunishment;
         }
 
         public int GetHigherSixLessonsValuation(List<Combination> timetable)
@@ -28,7 +28,7 @@ namespace Stundenplaner_Projekt
             return value;
         }
 
-        private int GetValuationPerDay(List<Combination> timetable, Weekday weekday) => timetable.Count(t => t.Time.Day == weekday) > 6 ? HigherThenSixLessons : 0;
+        private int GetValuationPerDay(List<Combination> timetable, Weekday weekday) => timetable.Count(t => t.Time.Day == weekday) > 6 ? HigherThenSixLessonsValuation : 0;
 
         public int GetTotalScore(List<Combination> timetable) => BaseValue - GetHigherSixLessonsValuation(timetable);
     }

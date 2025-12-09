@@ -8,7 +8,7 @@ namespace Stundenplaner_Projekt
 {
     public interface IScheduleGenerator
     {
-        IScheduleEvaluator ScheduleEvaluator { get; }
+        CurriculumValuation CurriculumValuation { get; }
         List<Dictionary<TimeBlock, Combination>> GetBestPlan();
     }
 }
