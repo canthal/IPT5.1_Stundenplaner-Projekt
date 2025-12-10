@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StundenplanerTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d56415db225606e19040fc2c2d86b3fbe7cebff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dd5f97503a1e360bed70a0fcced4ced76f05bde")]
 [assembly: System.Reflection.AssemblyProductAttribute("StundenplanerTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StundenplanerTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
