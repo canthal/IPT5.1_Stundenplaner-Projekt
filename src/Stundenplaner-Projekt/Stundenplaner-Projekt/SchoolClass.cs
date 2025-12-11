@@ -17,7 +17,7 @@ namespace Stundenplaner_Projekt
         /// <summary>
         /// Speiceherort für den Stundenplan der Klasse
         /// </summary>
-        private Dictionary<TimeBlock, Combination> _timetable;
+        private Dictionary<TimeBlock, Combination> _timetable = new();
         
         /// <summary>
         /// Property von Name, überprüft ob Name nicht leer ist
@@ -51,6 +51,7 @@ namespace Stundenplaner_Projekt
         /// <summary>
         /// Property von Timetable
         /// </summary>
+        [JsonIgnore]
         public Dictionary<TimeBlock, Combination> Timetable
         {
             get
@@ -60,6 +61,36 @@ namespace Stundenplaner_Projekt
             set
             {
                 _timetable = value;
+            }
+        }
+
+        /// <summary>
+        /// Property fuers Speichern in JSON
+        /// </summary>
+        public List<TimetableJSON> TimetableSerialized
+        {
+            get
+            {
+                if (_timetable == null || _timetable.Count == 0)
+                    return new List<TimetableJSON>();
+
+                List<TimetableJSON> list = new();
+                foreach (var t in _timetable)
+                    list.Add(new TimetableJSON(t.Key, t.Value));
+                return list;
+            }
+            set
+            {
+                _timetable = new();
+                if (value == null) return;
+
+                foreach (var entry in value)
+                {
+                    if (entry == null || entry.Block == null)
+                        continue;
+
+                    _timetable.Add(entry.Block, entry.Combination);
+                }
             }
         }
 

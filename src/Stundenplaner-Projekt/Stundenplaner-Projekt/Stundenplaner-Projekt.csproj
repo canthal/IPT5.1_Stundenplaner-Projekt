@@ -97,6 +97,7 @@
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="TimeBlock.cs" />
+    <Compile Include="TimetableJSON.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
