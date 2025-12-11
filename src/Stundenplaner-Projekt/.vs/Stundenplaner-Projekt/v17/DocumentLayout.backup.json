@@ -3,36 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}|StundenplanerTest\\StundenplanerTest.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplanertest\\stundenplanertestclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}|StundenplanerTest\\StundenplanerTest.csproj|solutionrelative:stundenplanertest\\stundenplanertestclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\classnotmorethensixlessonsvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\classnotmorethensixlessonsvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\equalroomusingvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Stundenplaner-Projekt||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplaner-projekt\\equalroomusingvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\equalroomusingvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\curriculumvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\curriculumvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\datenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\datenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\curriculumalgo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\curriculumalgo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}|StundenplanerTest\\StundenplanerTest.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplanertest\\testdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97EC5E5A-C1D7-4F3A-A545-F32747C25BD9}|StundenplanerTest\\StundenplanerTest.csproj|solutionrelative:stundenplanertest\\testdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\combination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\combination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\classnotmorethensixlessonsvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\classnotmorethensixlessonsvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\teacherprefermorninglessonvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\teacherprefermorninglessonvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplaner-projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\ischedulegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\ischedulegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\offpeak_betweenhours_efficientroomusingvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,20 +42,23 @@
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\minimizeroomchangevaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\curriculumvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\curriculumvaluation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\ischedulegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\ischedulegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\ischeduleevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\ischeduleevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\datenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\datenmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\stundenplaner-projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|solutionrelative:stundenplaner-projekt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\StundenplanerTestClass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StundenplanerTest\\StundenplanerTestClass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\TestData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StundenplanerTest\\TestData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0F3AD11-0415-40B7-864C-7842406900B5}|Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj|c:\\users\\sanji\\documents\\github\\ipt5.1_stundenplaner-projekt\\src\\stundenplaner-projekt\\stundenplaner-projekt\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +68,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -79,106 +81,100 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Stundenplaner-Projekt",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj",
+              "RelativeToolTip": "Stundenplaner-Projekt\\Stundenplaner-Projekt.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-11T10:51:42.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurriculumValuation.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumValuation.cs",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\CurriculumValuation.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumValuation.cs",
+              "RelativeToolTip": "Stundenplaner-Projekt\\CurriculumValuation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T15:18:07.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Datenmanager.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Datenmanager.cs",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Datenmanager.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Datenmanager.cs",
+              "RelativeToolTip": "Stundenplaner-Projekt\\Datenmanager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T20:37:23.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EqualRoomUsingValuation.cs",
               "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\EqualRoomUsingValuation.cs",
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\EqualRoomUsingValuation.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\EqualRoomUsingValuation.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\EqualRoomUsingValuation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T22:23:50.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ClassNotMoreThenSixLessonsValuation.cs",
               "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\ClassNotMoreThenSixLessonsValuation.cs",
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\ClassNotMoreThenSixLessonsValuation.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\ClassNotMoreThenSixLessonsValuation.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\ClassNotMoreThenSixLessonsValuation.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T22:23:11.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Combination.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Combination.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Combination.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Combination.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\Combination.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwBsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T18:55:36.16Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Program.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Program.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Program.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\Program.cs",
-              "ViewState": "AgIAAAwCAAAAAAAAAAAAABwCAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T18:56:01.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "CurriculumAlgo.cs",
               "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumAlgo.cs",
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\CurriculumAlgo.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumAlgo.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\CurriculumAlgo.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAADgvzcAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T18:55:49.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StundenplanerTestClass.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\StundenplanerTestClass.cs",
-              "RelativeDocumentMoniker": "StundenplanerTest\\StundenplanerTestClass.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\StundenplanerTestClass.cs",
-              "RelativeToolTip": "StundenplanerTest\\StundenplanerTestClass.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T21:20:04.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-06T18:55:49.089Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "TeacherPreferMorningLessonValuation.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\TeacherPreferMorningLessonValuation.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\TeacherPreferMorningLessonValuation.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\TeacherPreferMorningLessonValuation.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\TeacherPreferMorningLessonValuation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABMAAAAAAAAAA==",
+              "Title": "Combination.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Combination.cs",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Combination.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Combination.cs",
+              "RelativeToolTip": "Stundenplaner-Projekt\\Combination.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA+wBsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T22:22:24.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-06T18:55:36.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TestData.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\TestData.cs",
-              "RelativeDocumentMoniker": "StundenplanerTest\\TestData.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\TestData.cs",
-              "RelativeToolTip": "StundenplanerTest\\TestData.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IScheduleGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleGenerator.cs",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\IScheduleGenerator.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleGenerator.cs",
+              "RelativeToolTip": "Stundenplaner-Projekt\\IScheduleGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T21:32:21.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-07T21:44:20.419Z"
             },
             {
               "$type": "Document",
@@ -188,10 +184,9 @@
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\OffPeak_BetweenHours_EfficientRoomUsingValuation.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\OffPeak_BetweenHours_EfficientRoomUsingValuation.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\OffPeak_BetweenHours_EfficientRoomUsingValuation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAADwv0YAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T20:09:36.091Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-07T20:09:36.091Z"
             },
             {
               "$type": "Document",
@@ -201,58 +196,57 @@
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\MinimizeRoomChangeValuation.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\MinimizeRoomChangeValuation.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\MinimizeRoomChangeValuation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T22:20:52.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IScheduleGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleGenerator.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\IScheduleGenerator.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleGenerator.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\IScheduleGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T21:44:20.419Z"
+              "WhenOpened": "2025-12-07T22:20:52.041Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "CurriculumValuation.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumValuation.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\CurriculumValuation.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\CurriculumValuation.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\CurriculumValuation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T15:18:07.255Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "IScheduleEvaluator.cs",
               "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleEvaluator.cs",
               "RelativeDocumentMoniker": "Stundenplaner-Projekt\\IScheduleEvaluator.cs",
               "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\IScheduleEvaluator.cs",
               "RelativeToolTip": "Stundenplaner-Projekt\\IScheduleEvaluator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T20:04:21.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Datenmanager.cs",
-              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Datenmanager.cs",
-              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Datenmanager.cs",
-              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Datenmanager.cs",
-              "RelativeToolTip": "Stundenplaner-Projekt\\Datenmanager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "StundenplanerTestClass.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\StundenplanerTestClass.cs",
+              "RelativeDocumentMoniker": "StundenplanerTest\\StundenplanerTestClass.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\StundenplanerTestClass.cs",
+              "RelativeToolTip": "StundenplanerTest\\StundenplanerTestClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T20:37:23.681Z"
+              "WhenOpened": "2025-12-07T21:20:04.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Program.cs",
+              "RelativeDocumentMoniker": "Stundenplaner-Projekt\\Program.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\Stundenplaner-Projekt\\Program.cs",
+              "RelativeToolTip": "Stundenplaner-Projekt\\Program.cs",
+              "ViewState": "AgIAAAwCAAAAAAAAAAAAABwCAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T18:56:01.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TestData.cs",
+              "DocumentMoniker": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\TestData.cs",
+              "RelativeDocumentMoniker": "StundenplanerTest\\TestData.cs",
+              "ToolTip": "C:\\Users\\sanji\\Documents\\GitHub\\IPT5.1_Stundenplaner-Projekt\\src\\Stundenplaner-Projekt\\StundenplanerTest\\TestData.cs",
+              "RelativeToolTip": "StundenplanerTest\\TestData.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T21:32:21.603Z"
             }
           ]
         }
