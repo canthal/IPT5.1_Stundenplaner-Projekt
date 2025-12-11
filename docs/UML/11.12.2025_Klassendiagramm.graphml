@@ -274,7 +274,7 @@
 									<sys:String><![CDATA[~ <<Property>> Teachers: List<Teacher>]]></sys:String>
 									<sys:String><![CDATA[~ <<Property>> SchoolCLasses: List<SchoolClass>]]></sys:String>
 									<sys:String><![CDATA[~ <<Property>> Rooms: List<Room>]]></sys:String>
-									<sys:String><![CDATA[~  <<Property>> CurriculumValuation : CurriculumValuation { get; }]]></sys:String>
+									<sys:String><![CDATA[+  <<Property>> CurriculumValuation : CurriculumValuation { get; }]]></sys:String>
 								</x:Array>
 							</uml:UMLClassModel.attributes>
 							<uml:UMLClassModel.operations>
