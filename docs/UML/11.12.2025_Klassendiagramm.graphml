@@ -1015,7 +1015,7 @@
 		<node id="n32">
 			<data key="d0">32</data>
 			<data key="d5">
-				<y:RectD X="327.67189910739467" Y="-2316.5636059195585" Width="250" Height="214"/>
+				<y:RectD X="214.58264006570062" Y="-2313.5306286460764" Width="250" Height="214"/>
 			</data>
 			<data key="d7">
 				<uml:UMLNodeStyle fill="#FFFF5722">
@@ -1044,6 +1044,16 @@
 			</data>
 			<port name="p0"/>
 			<port name="p1"/>
+			<port name="p2">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.003968253968253954,0.5"/>
+				</data>
+			</port>
+			<port name="p3">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.996031746031746,0.5"/>
+				</data>
+			</port>
 		</node>
 		<node id="n33">
 			<data key="d0">33</data>
@@ -1922,7 +1932,7 @@
 				</x:List>
 			</data>
 			<data key="d5">
-				<y:RectD X="-4218.042359934299" Y="-1548.253325823273" Width="40" Height="40"/>
+				<y:RectD X="-4229.479859934299" Y="-1538.128325823273" Width="40" Height="40"/>
 			</data>
 			<data key="d7">
 				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
@@ -2253,7 +2263,7 @@
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2265,7 +2275,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2281,7 +2291,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2297,7 +2307,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2313,7 +2323,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2329,7 +2339,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2345,7 +2355,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2361,7 +2371,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2376,7 +2386,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2391,7 +2401,7 @@
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -2414,32 +2424,32 @@
 				</yjs:PolylineEdgeStyle>
 			</data>
 		</edge>
-		<edge id="e11" source="n32" target="n4" sourceport="p0" targetport="p1">
+		<edge id="e11" source="n32" target="n4" sourceport="p3" targetport="p1">
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
 		</edge>
-		<edge id="e12" source="n32" target="n0" sourceport="p1" targetport="p2">
+		<edge id="e12" source="n32" target="n0" sourceport="p2" targetport="p2">
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2513,13 +2523,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2529,13 +2539,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2545,13 +2555,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2561,13 +2571,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2577,13 +2587,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
@@ -2609,13 +2619,13 @@
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
-						<yjs:Stroke miterLimit="1.45"/>
+						<yjs:Stroke lineCap="SQUARE" dashStyle="Dash" miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="3" widthScale="3" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
