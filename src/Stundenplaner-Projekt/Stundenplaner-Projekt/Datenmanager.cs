@@ -15,23 +15,23 @@ namespace Stundenplaner_Projekt
         /// <summary>
         /// Pfad für Klasse Room
         /// </summary>
-        private static string pathRoom = Path.Combine(BasePath, "room.json") ;
+        private static readonly string pathRoom = Path.Combine(BasePath, "room.json") ;
         /// <summary>
         /// Pfad für Klasse Schulklasse
         /// </summary>
-        private static string pathSchoolClass = Path.Combine(BasePath, "schoolClass.json");
+        private static readonly string pathSchoolClass = Path.Combine(BasePath, "schoolClass.json");
         /// <summary>
         /// Pfad für Klasse Student
         /// </summary>
-        private static string pathStudent = Path.Combine(BasePath, "student.json");
+        private static readonly string pathStudent = Path.Combine(BasePath, "student.json");
         /// <summary>
         /// Pfad für Klasse Subject
         /// </summary>
-        private static string pathSubject = Path.Combine(BasePath, "subject.json");
+        private static readonly string pathSubject = Path.Combine(BasePath, "subject.json");
         /// <summary>
         /// Pfad für Klasse Teacher
         /// </summary>
-        private static string pathTeacher = Path.Combine(BasePath, "teacher.json");
+        private static readonly string pathTeacher = Path.Combine(BasePath, "teacher.json");
 
         /// <summary>
         /// Speichert alle Daten von Klassen namens Room 

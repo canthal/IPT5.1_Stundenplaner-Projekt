@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Stundenplaner_Projekt
 {
+    // nicht Implementiert, weil der Datenmanager static ist.
     internal interface IPersistenceService
     {
         string BasePath { get; }
