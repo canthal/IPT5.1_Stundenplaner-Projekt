@@ -37,6 +37,8 @@
 			<yjs:Font x:Key="2" fontSize="12"/>
 			<yjs:Color x:Key="3" value="#FFFAFAFA"/>
 			<yjs:Font x:Key="4" fontSize="25"/>
+			<yjs:Color x:Key="5" value="#FF607D8B"/>
+			<yjs:Color x:Key="6" value="#FF4CAF50"/>
 		</y:SharedData>
 	</data>
 	<graph id="G" edgedefault="directed">
@@ -45,7 +47,6 @@
 		</data>
 		<node id="n0">
 			<data key="d0">0</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="-1149.9700730123484" Y="-1866.8774765615935" Width="643.0361424162712" Height="310"/>
 			</data>
@@ -95,7 +96,6 @@
 		</node>
 		<node id="n1">
 			<data key="d0">1</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="-78.38515985127572" Y="-1866.8774765615935" Width="372.1626373920061" Height="310"/>
 			</data>
@@ -127,7 +127,6 @@
 		</node>
 		<node id="n2">
 			<data key="d0">2</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="609.809677623754" Y="-1882.8774765615935" Width="411.85455803064724" Height="326"/>
 			</data>
@@ -161,7 +160,6 @@
 		</node>
 		<node id="n3">
 			<data key="d0">3</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="1371.9299657142383" Y="-1321.067998841894" Width="373.0582795668673" Height="294"/>
 			</data>
@@ -219,7 +217,6 @@
 		</node>
 		<node id="n4">
 			<data key="d0">4</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="1372.3777868016687" Y="-1882.8774765615935" Width="372.1626373920061" Height="310"/>
 			</data>
@@ -256,9 +253,8 @@
 		</node>
 		<node id="n5">
 			<data key="d0">5</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
-				<y:RectD X="-237.40541065204434" Y="-1329.1913472036288" Width="690.2031389935433" Height="342"/>
+				<y:RectD X="-349.93624000320096" Y="-1324.2243244771105" Width="915.2647976958568" Height="358"/>
 			</data>
 			<data key="d7">
 				<uml:UMLNodeStyle fill="{y:GraphMLReference 1}">
@@ -278,15 +274,15 @@
 									<sys:String><![CDATA[~ <<Property>> Teachers: List<Teacher>]]></sys:String>
 									<sys:String><![CDATA[~ <<Property>> SchoolCLasses: List<SchoolClass>]]></sys:String>
 									<sys:String><![CDATA[~ <<Property>> Rooms: List<Room>]]></sys:String>
+									<sys:String><![CDATA[~  <<Property>> CurriculumValuation : CurriculumValuation { get; }]]></sys:String>
 								</x:Array>
 							</uml:UMLClassModel.attributes>
 							<uml:UMLClassModel.operations>
 								<x:Array>
-									<sys:String><![CDATA[~ CurriculumAlgo(schoolClasses: List<SchoolClass>, subjects: List<Subject>, teachers: List<Teacher>, rooms: List<Room>)]]></sys:String>
+									<sys:String><![CDATA[~ CurriculumAlgo(schoolClasses: List<SchoolClass>, subjects: List<Subject>, teachers: List<Teacher>, rooms: List<Room>, curriculumValuation: CurriculumValuation)]]></sys:String>
 									<sys:String>----------------------</sys:String>
 									<sys:String><![CDATA[- GetCurriculumTime(): List<TimeBlock>]]></sys:String>
 									<sys:String><![CDATA[- GetCombinationMatrix(): List<Combination>]]></sys:String>
-									<sys:String><![CDATA[- GetValuation(timetable: List<Combination>, offPeakTime: int, betweenHours: int, efficientRoomUsing: int): int]]></sys:String>
 									<sys:String><![CDATA[+ GetRandomCurriculum(): List<Dictionary<TimeBlock, Combination>>]]></sys:String>
 								</x:Array>
 							</uml:UMLClassModel.operations>
@@ -320,10 +316,14 @@
 				</data>
 			</port>
 			<port name="p5"/>
+			<port name="p6">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.001444662619493385,0.5"/>
+				</data>
+			</port>
 		</node>
 		<node id="n6">
 			<data key="d0">6</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="-120.74519779291087" Y="-723.0052178456639" Width="456.88271327527644" Height="262"/>
 			</data>
@@ -357,15 +357,14 @@
 		</node>
 		<node id="n7">
 			<data key="d0">7</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -383,15 +382,14 @@
 		</node>
 		<node id="n8">
 			<data key="d0">8</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -409,15 +407,14 @@
 		</node>
 		<node id="n9">
 			<data key="d0">9</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -435,15 +432,14 @@
 		</node>
 		<node id="n10">
 			<data key="d0">10</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -461,15 +457,14 @@
 		</node>
 		<node id="n11">
 			<data key="d0">11</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -487,15 +482,14 @@
 		</node>
 		<node id="n12">
 			<data key="d0">12</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -513,15 +507,14 @@
 		</node>
 		<node id="n13">
 			<data key="d0">13</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -539,15 +532,14 @@
 		</node>
 		<node id="n14">
 			<data key="d0">14</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -565,15 +557,14 @@
 		</node>
 		<node id="n15">
 			<data key="d0">15</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="632.0171304939944,40.52929687500023"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="632.0112711189944,40.67871093750023"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -591,15 +582,14 @@
 		</node>
 		<node id="n16">
 			<data key="d0">16</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -617,15 +607,14 @@
 		</node>
 		<node id="n17">
 			<data key="d0">17</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -643,15 +632,14 @@
 		</node>
 		<node id="n18">
 			<data key="d0">18</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -669,15 +657,14 @@
 		</node>
 		<node id="n19">
 			<data key="d0">19</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -695,15 +682,14 @@
 		</node>
 		<node id="n20">
 			<data key="d0">20</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -721,15 +707,14 @@
 		</node>
 		<node id="n21">
 			<data key="d0">21</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -747,15 +732,14 @@
 		</node>
 		<node id="n22">
 			<data key="d0">22</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -773,15 +757,14 @@
 		</node>
 		<node id="n23">
 			<data key="d0">23</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1, 1, 1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-8.732421875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-8.9111328125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -799,15 +782,14 @@
 		</node>
 		<node id="n24">
 			<data key="d0">24</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -825,15 +807,14 @@
 		</node>
 		<node id="n25">
 			<data key="d0">25</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -851,15 +832,14 @@
 		</node>
 		<node id="n26">
 			<data key="d0">26</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -877,15 +857,14 @@
 		</node>
 		<node id="n27">
 			<data key="d0">27</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -903,15 +882,14 @@
 		</node>
 		<node id="n28">
 			<data key="d0">28</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="4.951171875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="5.1142578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -929,15 +907,14 @@
 		</node>
 		<node id="n29">
 			<data key="d0">29</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1..*">
 						<y:Label.LayoutParameter>
-							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.88671875,-0.951171875"/>
+							<yx:FreeNodeLabelModelParameter LayoutOffset="-0.892578125,-0.8017578125"/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}" autoFlip="false"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 2}" autoFlip="false"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -955,9 +932,8 @@
 		</node>
 		<node id="n30">
 			<data key="d0">30</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
-				<y:RectD X="-1149.9700730123482" Y="-1321.1913472036285" Width="372.1626373920061" Height="325.9999999999998"/>
+				<y:RectD X="-930.3299973263056" Y="-723.005217845664" Width="372.1626373920061" Height="262"/>
 			</data>
 			<data key="d7">
 				<uml:UMLNodeStyle fill="{y:GraphMLReference 1}">
@@ -990,7 +966,6 @@
 		</node>
 		<node id="n31">
 			<data key="d0">31</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="1371.9299657142383" Y="-739.005217845664" Width="373.0582795668673" Height="294"/>
 			</data>
@@ -1039,7 +1014,6 @@
 		</node>
 		<node id="n32">
 			<data key="d0">32</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d5">
 				<y:RectD X="327.67189910739467" Y="-2316.5636059195585" Width="250" Height="214"/>
 			</data>
@@ -1073,7 +1047,6 @@
 		</node>
 		<node id="n33">
 			<data key="d0">33</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1081,7 +1054,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1102,7 +1075,6 @@
 		</node>
 		<node id="n34">
 			<data key="d0">34</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1110,7 +1082,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1131,7 +1103,6 @@
 		</node>
 		<node id="n35">
 			<data key="d0">35</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1139,7 +1110,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1160,7 +1131,6 @@
 		</node>
 		<node id="n36">
 			<data key="d0">36</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1168,7 +1138,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1189,7 +1159,6 @@
 		</node>
 		<node id="n37">
 			<data key="d0">37</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1197,7 +1166,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1218,7 +1187,6 @@
 		</node>
 		<node id="n38">
 			<data key="d0">38</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1226,7 +1194,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1247,7 +1215,6 @@
 		</node>
 		<node id="n39">
 			<data key="d0">39</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1255,7 +1222,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1276,7 +1243,6 @@
 		</node>
 		<node id="n40">
 			<data key="d0">40</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1284,7 +1250,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1305,7 +1271,6 @@
 		</node>
 		<node id="n41">
 			<data key="d0">41</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1313,7 +1278,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1334,7 +1299,6 @@
 		</node>
 		<node id="n42">
 			<data key="d0">42</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1342,13 +1306,13 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
 			</data>
 			<data key="d5">
-				<y:RectD X="493.05967762375394" Y="-1210.0024765615935" Width="40" Height="40"/>
+				<y:RectD X="576.5596776237539" Y="-1212.7524765615935" Width="40" Height="40"/>
 			</data>
 			<data key="d7">
 				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
@@ -1363,7 +1327,6 @@
 		</node>
 		<node id="n43">
 			<data key="d0">43</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1371,7 +1334,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1392,7 +1355,6 @@
 		</node>
 		<node id="n44">
 			<data key="d0">44</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1400,7 +1362,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1421,7 +1383,6 @@
 		</node>
 		<node id="n45">
 			<data key="d0">45</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1429,13 +1390,13 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
 			</data>
 			<data key="d5">
-				<y:RectD X="48.582640065700616" Y="-982.3774765615935" Width="40" Height="40"/>
+				<y:RectD X="48.582640065700616" Y="-944.8774765615935" Width="40" Height="40"/>
 			</data>
 			<data key="d7">
 				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
@@ -1450,7 +1411,6 @@
 		</node>
 		<node id="n46">
 			<data key="d0">46</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1458,7 +1418,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1479,7 +1439,6 @@
 		</node>
 		<node id="n47">
 			<data key="d0">47</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1487,7 +1446,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1508,7 +1467,6 @@
 		</node>
 		<node id="n48">
 			<data key="d0">48</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1516,7 +1474,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1537,7 +1495,6 @@
 		</node>
 		<node id="n49">
 			<data key="d0">49</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="n">
@@ -1545,7 +1502,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1566,7 +1523,6 @@
 		</node>
 		<node id="n50">
 			<data key="d0">50</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1574,7 +1530,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1595,7 +1551,6 @@
 		</node>
 		<node id="n51">
 			<data key="d0">51</data>
-			<data key="d3"><![CDATA[]]></data>
 			<data key="d4">
 				<x:List>
 					<y:Label Text="1">
@@ -1603,7 +1558,7 @@
 							<yx:FreeNodeLabelModelParameter/>
 						</y:Label.LayoutParameter>
 						<y:Label.Style>
-							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="WRAP_CHARACTER_ELLIPSIS" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
 						</y:Label.Style>
 					</y:Label>
 				</x:List>
@@ -1622,8 +1577,673 @@
 				</bpmn:ActivityNodeStyle>
 			</data>
 		</node>
+		<node id="n52">
+			<data key="d0">52</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-3071.375" Y="-2172.8774765615935" Width="302.56275728094073" Height="134"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 6}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="interface" constraint="" className="IScheduleEvaluator" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+			<port name="p2">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+			<port name="p3">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+			<port name="p4">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+		</node>
+		<node id="n53">
+			<data key="d0">53</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-3121.9826610473674" Y="-1230.9413472036285" Width="403.778079375676" Height="182"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 5}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="" constraint="" className="CurriculumValuation" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; } = "CurriculumValuation"]]></sys:String>
+									<sys:String><![CDATA[- ScheduleEvaluators: List<IScheduleEvaluator> {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ CurriculumValuation(scheduleEvaluators: List<IScheduleEvaluator>)]]></sys:String>
+									<sys:String>------------------------------------</sys:String>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.005434782608695109"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.005434782608695109"/>
+				</data>
+			</port>
+			<port name="p2">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.005434782608695109"/>
+				</data>
+			</port>
+			<port name="p3">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.005434782608695109"/>
+				</data>
+			</port>
+			<port name="p4">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.005434782608695109"/>
+				</data>
+			</port>
+			<port name="p5">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999995,0.5"/>
+				</data>
+			</port>
+		</node>
+		<node id="n54">
+			<data key="d0">54</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-2539.1737504730463" Y="-1818.8774765615935" Width="487.51459150478115" Height="230"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 5}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="" constraint="" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.className>ClassNotMoreThenSixLessonsValuation</uml:UMLClassModel.className>
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; } = "ClassNotMoreThenSixLessonsValuation"]]></sys:String>
+									<sys:String><![CDATA[- BASEVALUE : int =1000]]></sys:String>
+									<sys:String><![CDATA[- HigherThenSixLessonsValuation : int {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ ClassNotMoreThenSixLessonsValuation(higherThenSixLessonsPunishment: int = 5)]]></sys:String>
+									<sys:String>------------------------------------</sys:String>
+									<sys:String><![CDATA[- GetHigherSixLessonsValuation(timetable: List<Combination>) : int]]></sys:String>
+									<sys:String><![CDATA[- GetValuationPerDay(timetable: List<Combination>, weekday: Weekday) : int]]></sys:String>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000003,0.9953703703703708"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000003,0.0046296296296291966"/>
+				</data>
+			</port>
+		</node>
+		<node id="n55">
+			<data key="d0">55</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-3774.75" Y="-1818.8774765615935" Width="487.51459150478115" Height="214"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 5}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="" constraint="" className="EqualRoomUsingValuation" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; } = "EqualRoomUsingValuation"]]></sys:String>
+									<sys:String><![CDATA[- BASEVALUE : int =1000]]></sys:String>
+									<sys:String><![CDATA[- EqualRoomUsing : int {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ EqualRoomUsingValuation(equalRoomUsingPunishment : int = 5)]]></sys:String>
+									<sys:String>------------------------------------</sys:String>
+									<sys:String><![CDATA[- GetEqualRoomUsingValuation(timetable : List<Combination> ) : int]]></sys:String>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000003,0.9953703703703708"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000003,0.0046296296296291966"/>
+				</data>
+			</port>
+		</node>
+		<node id="n56">
+			<data key="d0">56</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-1904.25" Y="-1818.8774765615935" Width="487.51459150478115" Height="214"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 5}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="" constraint="" className="MinimizeRoomChangeValuation" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; } = "MinimizeRoomChangeValuation"]]></sys:String>
+									<sys:String><![CDATA[- BASEVALUE : int =1000]]></sys:String>
+									<sys:String><![CDATA[- MinimizeRoomChange: int {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ MinimizeRoomChangeValuation(equalRoomUsingPunishment : int = 5)]]></sys:String>
+									<sys:String>------------------------------------</sys:String>
+									<sys:String><![CDATA[- GetMinimizeRoomChangeValuation(timetable : List<Combination> ) : int]]></sys:String>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999999,0.9953703703703708"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.4999999999999999,0.0046296296296291966"/>
+				</data>
+			</port>
+		</node>
+		<node id="n57">
+			<data key="d0">57</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-4465.210351431844" Y="-1818.8774765615935" Width="536.4576039839935" Height="278"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 5}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="" constraint="" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.className>OffPeak_BetweenHours_EfficientRoomUsingValuation</uml:UMLClassModel.className>
+							<uml:UMLClassModel.attributes>
+								<x:Array>
+									<sys:String><![CDATA[+ Name: string {get; } = "BasicValuation"]]></sys:String>
+									<sys:String><![CDATA[- BASEVALUE : int =1000]]></sys:String>
+									<sys:String><![CDATA[- OffPeakTime: int {get; }]]></sys:String>
+									<sys:String><![CDATA[- BetweenHours: int {get; }]]></sys:String>
+									<sys:String><![CDATA[- EfficientRoomUsing: int {get; }]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ OffPeak_BetweenHours_EfficientRoomUsingValuation(equalRoomUsingPunishment : int = 5)]]></sys:String>
+									<sys:String>------------------------------------</sys:String>
+									<sys:String><![CDATA[- GetOffPeakTimeReduction(timetable : List<Combination> ) : int]]></sys:String>
+									<sys:String><![CDATA[- GetEfficientRoomUsingReduction(timetable : List<Combination> ) : int]]></sys:String>
+									<sys:String><![CDATA[- GetBetweenHoursReduction(timetable : List<Combination> ) : int]]></sys:String>
+									<sys:String><![CDATA[+ GetTotalScore(timetable: List<Combination>) : int]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000004,0.9962121212121212"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000004,0.003787878787878814"/>
+				</data>
+			</port>
+		</node>
+		<node id="n58">
+			<data key="d0">58</data>
+			<data key="d3"><![CDATA[]]></data>
+			<data key="d5">
+				<y:RectD X="-1528.4999999999818" Y="-1206.9413472036288" Width="355.4798251446927" Height="134"/>
+			</data>
+			<data key="d7">
+				<uml:UMLNodeStyle fill="{y:GraphMLReference 6}">
+					<uml:UMLNodeStyle.highlightFill>
+						<yjs:CssFill cssString="#a3f1bb"/>
+					</uml:UMLNodeStyle.highlightFill>
+					<uml:UMLNodeStyle.model>
+						<uml:UMLClassModel stereotype="interface" constraint="" className="IScheduleGenerator" attributesOpen="true" operationsOpen="true">
+							<uml:UMLClassModel.attributes>
+								<x:Array/>
+							</uml:UMLClassModel.attributes>
+							<uml:UMLClassModel.operations>
+								<x:Array>
+									<sys:String><![CDATA[+ CurriculumValuation: CurriculumValuation {get: }]]></sys:String>
+									<sys:String><![CDATA[+ GetBestPlan() : List<Dictionary<TimeBlock, Combination>>]]></sys:String>
+								</x:Array>
+							</uml:UMLClassModel.operations>
+						</uml:UMLClassModel>
+					</uml:UMLNodeStyle.model>
+				</uml:UMLNodeStyle>
+			</data>
+			<port name="p0">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.002797360661109176,0.5"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d16">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5000000000000001,0.5"/>
+				</data>
+			</port>
+		</node>
+		<node id="n59">
+			<data key="d0">59</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-4218.042359934299" Y="-1548.253325823273" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n60">
+			<data key="d0">60</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-3559.1673599342994" Y="-1596.8774765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n61">
+			<data key="d0">61</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-2297.2923599342994" Y="-1578.6274765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n62">
+			<data key="d0">62</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-1679.5423599342994" Y="-1592.6274765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n63">
+			<data key="d0">63</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-2761.374742719059" Y="-1279.0024765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n64">
+			<data key="d0">64</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-2820.0423599342994" Y="-1342.6274765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n65">
+			<data key="d0">65</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-3188.0423599342994" Y="-1279.0024765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n66">
+			<data key="d0">66</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-3134.0423599342994" Y="-1352.5024765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n67">
+			<data key="d0">67</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-1572.1247427190592" Y="-1182.1274765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n68">
+			<data key="d0">68</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="-2706.374742719059" Y="-1188.6274765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n69">
+			<data key="d0">69</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="1">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="576.5596776237539" Y="-1017.2524765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
+		<node id="n70">
+			<data key="d0">70</data>
+			<data key="d4">
+				<x:List>
+					<y:Label Text="n">
+						<y:Label.LayoutParameter>
+							<yx:FreeNodeLabelModelParameter/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:LabelStyle horizontalTextAlignment="CENTER" wrapping="NONE" textWrappingShape="LABEL_SHAPE" font="{y:GraphMLReference 4}" autoFlip="false" textSize="25"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d5">
+				<y:RectD X="1323.434677623754" Y="-728.5024765615935" Width="40" Height="40"/>
+			</data>
+			<data key="d7">
+				<bpmn:ActivityNodeStyle minimumSize="40,40" outline="WHITE">
+					<bpmn:ActivityNodeStyle.background>
+						<yjs:LinearGradient spreadMethod="PAD" startPoint="0,0" endPoint="1,1">
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="0"/>
+							<yjs:GradientStop color="{y:GraphMLReference 3}" offset="1"/>
+						</yjs:LinearGradient>
+					</bpmn:ActivityNodeStyle.background>
+				</bpmn:ActivityNodeStyle>
+			</data>
+		</node>
 		<edge id="e0" source="n1" target="n0" sourceport="p0" targetport="p0">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
@@ -1633,20 +2253,19 @@
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
 		</edge>
 		<edge id="e1" source="n4" target="n3" sourceport="p0" targetport="p0">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1656,14 +2275,13 @@
 		</edge>
 		<edge id="e2" source="n6" target="n5" sourceport="p0" targetport="p0">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1673,14 +2291,13 @@
 		</edge>
 		<edge id="e3" source="n6" target="n3" sourceport="p1" targetport="p1">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1690,14 +2307,13 @@
 		</edge>
 		<edge id="e4" source="n1" target="n5" sourceport="p1" targetport="p1">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="WHITE" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1707,14 +2323,13 @@
 		</edge>
 		<edge id="e5" source="n3" target="n5" sourceport="p2" targetport="p2">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1724,14 +2339,13 @@
 		</edge>
 		<edge id="e6" source="n2" target="n5" sourceport="p0" targetport="p3">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1741,14 +2355,13 @@
 		</edge>
 		<edge id="e7" source="n0" target="n5" sourceport="p1" targetport="p4">
 			<data key="d9"><![CDATA[]]></data>
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1757,14 +2370,13 @@
 			</data>
 		</edge>
 		<edge id="e8" source="n31" target="n3" sourceport="p0" targetport="p3">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="BLACK" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="BLACK" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1773,14 +2385,13 @@
 			</data>
 		</edge>
 		<edge id="e9" source="n31" target="n5" sourceport="p1" targetport="p5">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
 						<yjs:Stroke miterLimit="1.45"/>
 					</yjs:PolylineEdgeStyle.stroke>
 					<yjs:PolylineEdgeStyle.targetArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="DIAMOND"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="DIAMOND"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
 						<yjs:Arrow fill="BLACK" type="NONE"/>
@@ -1789,7 +2400,6 @@
 			</data>
 		</edge>
 		<edge id="e10" source="n31" target="n6" sourceport="p2" targetport="p2">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
@@ -1805,7 +2415,6 @@
 			</data>
 		</edge>
 		<edge id="e11" source="n32" target="n4" sourceport="p0" targetport="p1">
-			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
 					<yjs:PolylineEdgeStyle.stroke>
@@ -1815,12 +2424,27 @@
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="TRIANGLE"/>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
 		</edge>
 		<edge id="e12" source="n32" target="n0" sourceport="p1" targetport="p2">
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e13" source="n54" target="n53" sourceport="p0" targetport="p0">
 			<data key="d10"><![CDATA[]]></data>
 			<data key="d13">
 				<yjs:PolylineEdgeStyle>
@@ -1831,7 +2455,167 @@
 						<yjs:Arrow fill="BLACK" type="NONE"/>
 					</yjs:PolylineEdgeStyle.targetArrow>
 					<yjs:PolylineEdgeStyle.sourceArrow>
-						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" cropLength="1" lengthScale="5" widthScale="5" type="TRIANGLE"/>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e14" source="n56" target="n53" sourceport="p0" targetport="p1">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e15" source="n55" target="n53" sourceport="p0" targetport="p2">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e16" source="n57" target="n53" sourceport="p0" targetport="p3">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e17" source="n52" target="n54" sourceport="p0" targetport="p1">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e18" source="n52" target="n55" sourceport="p1" targetport="p1">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e19" source="n52" target="n57" sourceport="p2" targetport="p1">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e20" source="n52" target="n56" sourceport="p3" targetport="p1">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e21" source="n52" target="n53" sourceport="p4" targetport="p4">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e22" source="n53" target="n58" sourceport="p5" targetport="p0">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.sourceArrow>
+				</yjs:PolylineEdgeStyle>
+			</data>
+		</edge>
+		<edge id="e23" source="n58" target="n5" sourceport="p1" targetport="p6">
+			<data key="d10"><![CDATA[]]></data>
+			<data key="d13">
+				<yjs:PolylineEdgeStyle>
+					<yjs:PolylineEdgeStyle.stroke>
+						<yjs:Stroke miterLimit="1.45"/>
+					</yjs:PolylineEdgeStyle.stroke>
+					<yjs:PolylineEdgeStyle.targetArrow>
+						<yjs:Arrow fill="BLACK" type="NONE"/>
+					</yjs:PolylineEdgeStyle.targetArrow>
+					<yjs:PolylineEdgeStyle.sourceArrow>
+						<yjs:Arrow stroke="#FF000000" fill="TRANSPARENT" type="TRIANGLE"/>
 					</yjs:PolylineEdgeStyle.sourceArrow>
 				</yjs:PolylineEdgeStyle>
 			</data>
